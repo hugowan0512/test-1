@@ -1,0 +1,3046 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>香江歲月：我的人生自傳｜香港長者互動懷緬遊戲</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FBF7F0',
+            paperDark: '#F2E9D8',
+            paperCard: '#FFFDF9',
+            ink: '#1E1B18',
+            inkMuted: '#574F47',
+            stampRed: '#C83E2B',
+            stampRedDark: '#9E2B1B',
+            jade: '#1F6E58',
+            jadeDark: '#145240',
+            jadeLight: '#E6F2EE',
+            gold: '#C88A2B',
+            goldLight: '#FDF5E6',
+            borderWarm: '#D8CBB8'
+          },
+          fontFamily: {
+            serif: ['"Noto Serif TC"', 'Georgia', 'serif'],
+            sans: ['"Noto Sans TC"', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --base-font-size: 18px;
+    }
+    html.font-xlarge {
+      --base-font-size: 22px;
+    }
+    body {
+      font-size: var(--base-font-size);
+      background-color: #FBF7F0;
+      color: #1E1B18;
+      font-family: 'Noto Sans TC', sans-serif;
+      background-image: 
+        radial-gradient(#D8CBB8 0.65px, transparent 0.65px), 
+        radial-gradient(#E5DEC9 0.65px, #FBF7F0 0.65px);
+      background-size: 28px 28px;
+      background-position: 0 0, 14px 14px;
+      overflow-x: hidden;
+    }
+
+    .hk-vintage-frame {
+      border: 3px solid #1E1B18;
+      box-shadow: 
+        inset 0 0 0 4px #FBF7F0,
+        inset 0 0 0 6px #C83E2B,
+        0 12px 30px -8px rgba(30, 27, 24, 0.14);
+      position: relative;
+    }
+
+    .corner-ornament {
+      width: 22px;
+      height: 22px;
+      border-color: #C83E2B;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .hk-red-stamp {
+      border: 3px solid #C83E2B;
+      color: #C83E2B;
+      font-family: 'Noto Serif TC', serif;
+      transform: rotate(-4deg);
+      box-shadow: inset 0 0 0 1px #C83E2B;
+      letter-spacing: 0.1em;
+    }
+
+    .senior-btn {
+      min-height: 64px;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+    }
+    .senior-btn:active {
+      transform: translateY(2px) scale(0.99);
+    }
+
+    .vintage-photo-filter {
+      filter: sepia(0.35) contrast(1.08) brightness(0.96);
+    }
+
+    .hk-photo-frame {
+      background: #FFFDF9;
+      padding: 8px 8px 12px 8px;
+      border: 2px solid #1E1B18;
+      box-shadow: 0 8px 20px -6px rgba(30, 27, 24, 0.22);
+      position: relative;
+    }
+
+    @media print {
+      body {
+        background: #FFFFFF !important;
+        font-size: 14pt !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-break-inside {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-stampRed selection:text-white">
+
+  <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-md border-b-2 border-borderWarm shadow-sm no-print">
+    <div class="max-w-5xl mx-auto px-3 sm:px-6 py-2.5">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="goToScreen('onboarding')" title="返回香江出世紙">
+          <div class="w-12 h-12 rounded-xl bg-stampRed text-white flex flex-col items-center justify-center font-serif font-bold border-2 border-ink shadow-sm shrink-0">
+            <span class="text-xs leading-none">香江</span>
+            <span class="text-sm leading-tight">歲月</span>
+          </div>
+          <div>
+            <h1 class="font-serif font-black text-lg sm:text-xl text-ink tracking-tight leading-snug">
+              香江歲月：我的人生自傳
+            </h1>
+            <div class="flex items-center gap-2 text-xs sm:text-sm text-jade font-medium">
+              <span class="inline-flex items-center gap-1 bg-jadeLight text-jadeDark px-2 py-0.5 rounded-full border border-jade/30">
+                <span>✓</span> 已對齊香港真實歷史與舊照
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <button 
+            onclick="goToChapter(4)"
+            class="px-3.5 py-2.5 rounded-xl border-2 border-stampRed bg-goldLight hover:bg-amber-200/80 text-stampRed font-bold text-sm flex items-center gap-1.5 shadow-sm transition">
+            <span>🍵</span>
+            <span>直達「日常生活篇」</span>
+          </button>
+
+          <button 
+            id="btn-font-toggle"
+            onclick="toggleFontSize()"
+            class="px-3.5 py-2.5 rounded-xl border-2 border-ink bg-paperCard hover:bg-paperDark text-ink font-bold text-sm flex items-center gap-1.5 shadow-sm transition">
+            <span>🔍</span>
+            <span id="font-toggle-label">特大字體：關</span>
+          </button>
+
+          <button 
+            id="btn-tts-toggle"
+            onclick="toggleAutoTTS()"
+            class="px-3.5 py-2.5 rounded-xl border-2 border-jade bg-jade text-white hover:bg-jadeDark font-bold text-sm flex items-center gap-1.5 shadow-sm transition">
+            <span id="tts-icon">🔊</span>
+            <span id="tts-label">廣東話讀題：開</span>
+          </button>
+
+          <button 
+            id="btn-voice-picker-modal"
+            onclick="toggleVoiceModal(true)"
+            class="px-3.5 py-2.5 rounded-xl border-2 border-ink bg-goldLight hover:bg-amber-200 text-ink font-bold text-sm flex items-center gap-1.5 shadow-sm transition"
+            title="揀選男聲或女聲廣東話朗讀聲線">
+            <span id="header-voice-avatar">👩</span>
+            <span id="header-voice-name">聲線：秀蘭姐</span>
+            <span class="text-xs text-stampRed">▾</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-2.5 pt-2 border-t border-borderWarm/70 flex items-center justify-between gap-1 overflow-x-auto pb-1">
+        <button onclick="goToScreen('onboarding')" id="nav-step-onboarding" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold whitespace-nowrap transition flex items-center gap-1">
+          <span>🪪</span> 出世紙
+        </button>
+        <span class="text-borderWarm font-bold">▸</span>
+        <div id="chapter-stepper-container" class="flex items-center gap-1 sm:gap-1.5"></div>
+        <span class="text-borderWarm font-bold">▸</span>
+        <button onclick="goToScreen('book')" id="nav-step-book" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-bold whitespace-nowrap transition flex items-center gap-1">
+          <span>📕</span> 完成自傳書
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-4xl w-full mx-auto px-3 sm:px-6 py-6 sm:py-8">
+
+    <!-- SCREEN 1: Onboarding Card -->
+    <section id="screen-onboarding" class="space-y-6">
+      <div class="bg-paperDark/90 border-2 border-borderWarm rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-2 text-stampRed font-bold text-sm">
+            <span>🍵</span> 飲啖茶，傾下當年今日（重溫香港 6 大階段集體回憶）
+          </div>
+          <h2 class="font-serif font-bold text-xl sm:text-2xl text-ink">
+            精選 9 項豐富回憶選項、真實香港舊照，開咪講廣東話即時轉文字！
+          </h2>
+        </div>
+        <div class="flex flex-wrap gap-2 shrink-0">
+          <button 
+            onclick="loadDemoProfileAndBook()"
+            class="px-4 py-3 rounded-xl bg-goldLight border-2 border-gold text-ink font-bold text-sm hover:bg-amber-100 transition flex items-center gap-1.5 shadow-sm">
+            <span>✨</span> 載入「陳伯」完整示範
+          </button>
+        </div>
+      </div>
+
+      <div class="hk-vintage-frame bg-paperCard rounded-2xl p-5 sm:p-8 md:p-10">
+        <div class="corner-ornament top-3 left-3 border-t-4 border-l-4"></div>
+        <div class="corner-ornament top-3 right-3 border-t-4 border-r-4"></div>
+        <div class="corner-ornament bottom-3 left-3 border-b-4 border-l-4"></div>
+        <div class="corner-ornament bottom-3 right-3 border-b-4 border-r-4"></div>
+
+        <div class="text-center border-b-2 border-ink pb-5 mb-6 relative">
+          <p class="text-xs sm:text-sm font-serif tracking-widest text-inkMuted uppercase">
+            HONG KONG LIFE MEMOIR ARCHIVE ・ 香江生命記憶檔案館
+          </p>
+          <h2 class="font-serif font-black text-3xl sm:text-4xl text-ink mt-1 tracking-wider">
+            香 江 出 世 紙
+          </h2>
+          <p class="text-sm sm:text-base text-inkMuted mt-2">
+            填寫起點，自動對齊當年香港歷史大事與集體回憶
+          </p>
+          <div class="hidden sm:flex hk-red-stamp px-3 py-1.5 rounded font-bold text-xs sm:text-sm absolute right-2 top-1 flex-col items-center leading-tight bg-paperCard/90">
+            <span>香江歲月</span>
+            <span>生命印記</span>
+          </div>
+        </div>
+
+        <div class="mb-7 grid grid-cols-1 md:grid-cols-3 gap-4 bg-paper p-4 rounded-2xl border-2 border-borderWarm items-center">
+          <div class="hk-photo-frame rounded-xl text-center space-y-2">
+            <div class="relative overflow-hidden rounded-lg h-44 bg-paperDark">
+              <img 
+                id="onboarding-portrait-img"
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=700&q=80" 
+                alt="長者個人珍藏相片" 
+                class="w-full h-full object-cover vintage-photo-filter"
+              />
+              <span class="absolute top-2 left-2 px-2.5 py-0.5 rounded bg-ink/80 text-amber-200 font-bold text-xs">
+                📸 主角珍藏相片
+              </span>
+            </div>
+            <div class="flex items-center justify-between gap-2 px-1">
+              <span class="text-xs font-serif font-bold text-inkMuted">個人相片</span>
+              <label class="cursor-pointer px-2.5 py-1 rounded-lg bg-goldLight hover:bg-amber-200 text-stampRed border border-gold font-bold text-xs transition">
+                📷 換相
+                <input type="file" accept="image/*" class="hidden" onchange="uploadProfilePhoto(event)" />
+              </label>
+            </div>
+          </div>
+
+          <div class="md:col-span-2 hk-photo-frame rounded-xl space-y-2">
+            <div class="relative overflow-hidden rounded-lg h-44 bg-paperDark">
+              <img 
+                src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1000&q=80" 
+                alt="昔日香港維多利亞港" 
+                class="w-full h-full object-cover vintage-photo-filter"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-3.5">
+                <div class="text-white space-y-0.5">
+                  <div class="text-xs font-bold text-amber-300">🎞️ 獅子山下歲月</div>
+                  <div class="font-serif font-bold text-sm sm:text-base">
+                    每一張懷舊老照片，都盛載著香港人的獨家記憶
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center justify-between text-xs text-inkMuted px-1">
+              <span>📍 昔日香港維多利亞港與兩岸街坊情懷</span>
+              <span class="font-bold text-jadeDark">✓ 6大章節均設專屬香港舊照</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-7">
+          <div class="space-y-2.5">
+            <div class="flex items-center justify-between">
+              <label for="input-name" class="block font-serif font-bold text-xl sm:text-2xl text-ink">
+                1. 請問點樣稱呼你？
+              </label>
+              <button onclick="speakText('請問點樣稱呼你？你可以輸入自己個名，或者揀下面嘅稱呼。')" class="text-jade font-bold text-sm px-3 py-1.5 rounded-lg bg-jadeLight hover:bg-jade/20 transition flex items-center gap-1">
+                <span>🔊</span> 讀出
+              </button>
+            </div>
+            <input 
+              id="input-name"
+              type="text"
+              placeholder="例如：陳伯、秀蘭姐、李生..."
+              value="陳伯（陳志強）"
+              oninput="updateOnboardingData()"
+              class="w-full senior-btn px-5 py-4 text-xl sm:text-2xl font-bold bg-paper border-2 border-ink rounded-xl focus:outline-none focus:ring-4 focus:ring-stampRed/30 focus:border-stampRed"
+            />
+            <div class="flex flex-wrap items-center gap-2 pt-1">
+              <span class="text-sm text-inkMuted">快速點選：</span>
+              <button type="button" onclick="setQuickName('陳伯（陳志強）')" class="px-3.5 py-2 rounded-lg bg-paperDark hover:bg-amber-200/70 text-ink font-bold text-sm border border-borderWarm transition">陳伯（陳志強）</button>
+              <button type="button" onclick="setQuickName('秀蘭姐（張秀蘭）')" class="px-3.5 py-2 rounded-lg bg-paperDark hover:bg-amber-200/70 text-ink font-bold text-sm border border-borderWarm transition">秀蘭姐（張秀蘭）</button>
+              <button type="button" onclick="setQuickName('榮叔（黃國榮）')" class="px-3.5 py-2 rounded-lg bg-paperDark hover:bg-amber-200/70 text-ink font-bold text-sm border border-borderWarm transition">榮叔（黃國榮）</button>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <label class="block font-serif font-bold text-xl sm:text-2xl text-ink">
+              2. 你係邊個年代出世？（自動匹配當年香港大事）
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="decade-buttons">
+              <button type="button" onclick="selectDecade(1930, 1938)" data-decade="1930" class="decade-btn senior-btn p-4 rounded-xl border-2 border-ink bg-paper hover:bg-paperDark text-left transition flex flex-col justify-between">
+                <span class="text-xs font-bold opacity-80">戰前歲月</span>
+                <span class="font-serif font-black text-xl sm:text-2xl mt-1">1930年代</span>
+                <span class="text-xs opacity-75 mt-1">約 88 歲以上</span>
+              </button>
+              <button type="button" onclick="selectDecade(1940, 1948)" data-decade="1940" class="decade-btn senior-btn p-4 rounded-xl border-2 border-stampRed bg-stampRed text-white text-left transition flex flex-col justify-between shadow-md">
+                <span class="text-xs font-bold opacity-90">戰後重光</span>
+                <span class="font-serif font-black text-xl sm:text-2xl mt-1">1940年代</span>
+                <span class="text-xs opacity-90 mt-1">約 78 歲</span>
+              </button>
+              <button type="button" onclick="selectDecade(1950, 1955)" data-decade="1950" class="decade-btn senior-btn p-4 rounded-xl border-2 border-ink bg-paper hover:bg-paperDark text-left transition flex flex-col justify-between">
+                <span class="text-xs font-bold opacity-80">屋邨與工業</span>
+                <span class="font-serif font-black text-xl sm:text-2xl mt-1">1950年代</span>
+                <span class="text-xs opacity-75 mt-1">約 71 歲</span>
+              </button>
+              <button type="button" onclick="selectDecade(1960, 1963)" data-decade="1960" class="decade-btn senior-btn p-4 rounded-xl border-2 border-ink bg-paper hover:bg-paperDark text-left transition flex flex-col justify-between">
+                <span class="text-xs font-bold opacity-80">獅子山下</span>
+                <span class="font-serif font-black text-xl sm:text-2xl mt-1">1960年代</span>
+                <span class="text-xs opacity-75 mt-1">約 63 歲</span>
+              </button>
+            </div>
+
+            <div class="bg-paperDark/70 p-4 rounded-xl border border-borderWarm flex flex-wrap items-center justify-between gap-3">
+              <div class="flex flex-wrap items-center gap-4">
+                <div class="flex items-center gap-2">
+                  <label for="select-birth-year" class="font-bold text-ink">具體年份：</label>
+                  <select 
+                    id="select-birth-year"
+                    onchange="onBirthYearSelectChanged(this.value)"
+                    class="px-4 py-2.5 rounded-xl border-2 border-ink bg-paperCard font-serif font-bold text-lg sm:text-xl text-stampRed focus:outline-none cursor-pointer">
+                  </select>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <label for="input-direct-age" class="font-bold text-ink">或直接揀年齡：</label>
+                  <div class="inline-flex items-center bg-paperCard border-2 border-ink rounded-xl overflow-hidden">
+                    <button type="button" onclick="adjustAge(-1)" class="px-3 py-2 bg-paper hover:bg-paperDark font-black text-lg border-r border-ink">－</button>
+                    <input 
+                      id="input-direct-age"
+                      type="number"
+                      min="50"
+                      max="105"
+                      value="78"
+                      oninput="onDirectAgeChanged(this.value)"
+                      class="w-16 text-center font-serif font-black text-lg sm:text-xl text-stampRed bg-transparent focus:outline-none"
+                    />
+                    <span class="pr-2 font-bold text-sm text-inkMuted">歲</span>
+                    <button type="button" onclick="adjustAge(1)" class="px-3 py-2 bg-paper hover:bg-paperDark font-black text-lg border-l border-ink">＋</button>
+                  </div>
+                </div>
+              </div>
+              <div id="era-preview-pill" class="text-sm font-medium text-jadeDark bg-jadeLight px-3.5 py-2 rounded-lg border border-jade/30">
+                ✨ 童年將對齊：1950年代香江街坊歲月、1963年大制水記憶
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <label class="block font-serif font-bold text-xl sm:text-2xl text-ink">
+              3. 主要喺邊區生活？
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="district-grid"></div>
+            <div class="pt-1">
+              <input 
+                id="input-custom-district"
+                type="text"
+                placeholder="或者自行輸入地區（例如：西環、紅磡、香港仔、調景嶺...）"
+                oninput="updateCustomDistrict(this.value)"
+                class="w-full px-4 py-3 text-base sm:text-lg bg-paper border-2 border-borderWarm rounded-xl focus:outline-none focus:border-ink"
+              />
+            </div>
+          </div>
+
+          <!-- VOICE PERSONA SELECTOR ON ONBOARDING -->
+          <div class="space-y-3 pt-2 border-t-2 border-borderWarm">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <label class="block font-serif font-bold text-xl sm:text-2xl text-ink">
+                4. 揀一把陪你傾偈嘅「廣東話聲音」（男女各 3 款）：
+              </label>
+              <button 
+                type="button" 
+                onclick="previewSelectedVoice()"
+                class="px-3.5 py-1.5 rounded-xl bg-jade text-white font-bold text-sm hover:bg-jadeDark transition flex items-center gap-1.5 shadow-sm">
+                <span>🔊</span> 試聽目前聲線
+              </button>
+            </div>
+            <div id="onboarding-voice-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+          </div>
+
+          <div class="bg-goldLight border-2 border-gold rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="space-y-1">
+              <div class="text-xs font-bold uppercase tracking-wider text-gold">檔案編號：HK-MEMOIR-<span id="cert-serial">1948</span></div>
+              <div class="font-serif font-bold text-lg sm:text-xl text-ink" id="cert-summary-line">
+                主角：陳伯（陳志強）｜1948年出生｜成長於深水埗／石硤尾
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-3">
+            <button 
+              type="button"
+              onclick="startStoryJourney()"
+              class="flex-1 senior-btn bg-stampRed hover:bg-stampRedDark text-white font-serif font-black text-xl sm:text-2xl py-5 px-8 rounded-2xl shadow-lg border-2 border-ink flex items-center justify-center gap-3 transition">
+              <span>開始我的人生故事</span>
+              <span class="text-2xl">→</span>
+            </button>
+            <button 
+              type="button"
+              onclick="goToScreen('book')"
+              class="senior-btn bg-paper hover:bg-paperDark text-ink font-bold text-lg py-4 px-6 rounded-2xl border-2 border-ink flex items-center justify-center gap-2 transition">
+              <span>📕</span>
+              <span>直接睇自傳書預覽</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2 & 3: 6-Stage Reminiscence Loop -->
+    <section id="screen-chapter" class="hidden space-y-6">
+      <div class="hk-vintage-frame bg-paperCard rounded-2xl overflow-hidden">
+        <div class="bg-gradient-to-r from-ink via-stone-800 to-ink text-paper p-5 sm:p-6 relative overflow-hidden">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 relative z-10">
+            <div class="space-y-1.5 max-w-xl">
+              <div class="flex flex-wrap items-center gap-2">
+                <span id="chapter-badge" class="px-3 py-1 rounded-full bg-stampRed text-white font-bold text-xs sm:text-sm tracking-wide">
+                  第一章（共六章）
+                </span>
+                <span id="chapter-era-years" class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-200 border border-amber-300/40 font-mono font-bold text-xs sm:text-sm">
+                  📅 1948年 – 1960年（0–12歲）
+                </span>
+              </div>
+              <h2 id="chapter-title" class="font-serif font-black text-2xl sm:text-3xl text-white tracking-wide">
+                第一章：落地生根（童年歲月）
+              </h2>
+              <p id="chapter-era-context" class="text-amber-100/90 text-sm sm:text-base leading-relaxed">
+                當年香港正值戰後重建與人口急增，街坊鄰里守望相助。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 sm:p-6 bg-paper border-b-2 border-borderWarm">
+          <div class="hk-photo-frame rounded-2xl overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center p-2">
+              <div class="md:col-span-7 relative rounded-xl overflow-hidden h-52 sm:h-64 bg-paperDark">
+                <img 
+                  id="chapter-featured-photo"
+                  src="https://images.unsplash.com/photo-1518599807935-37015b9cefcb?auto=format&fit=crop&w=900&q=80"
+                  alt="本章歲月相片"
+                  class="w-full h-full object-cover vintage-photo-filter transition-all duration-500"
+                />
+                <span id="chapter-photo-era-tag" class="absolute top-3 left-3 px-3 py-1 rounded-full bg-ink/85 text-amber-200 font-bold text-xs shadow">
+                  📸 香港真實歷史珍藏相片
+                </span>
+              </div>
+              <div class="md:col-span-5 p-2 sm:p-4 space-y-3 flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="inline-flex items-center gap-1.5 text-xs font-bold text-stampRed bg-goldLight px-2.5 py-1 rounded-md border border-gold">
+                    <span>🎞️</span>
+                    <span>視覺記憶觸發</span>
+                  </div>
+                  <h4 id="chapter-photo-title" class="font-serif font-black text-xl sm:text-2xl text-ink leading-snug">
+                    昔日香江唐樓與街坊鄰里歲月
+                  </h4>
+                  <p id="chapter-photo-caption" class="text-sm sm:text-base text-inkMuted leading-relaxed">
+                    望住呢張香港舊照，有無令你諗起細個住過嘅街道、屋企人嘅笑容？
+                  </p>
+                </div>
+
+                <div class="pt-2 border-t border-borderWarm flex flex-wrap items-center gap-2 no-print">
+                  <label class="cursor-pointer px-4 py-2.5 rounded-xl bg-stampRed hover:bg-stampRedDark text-white font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-sm transition">
+                    <span>📷</span>
+                    <span>換上真實舊相片</span>
+                    <input type="file" accept="image/*" class="hidden" onchange="uploadChapterPhoto(event, state.currentChapterIndex)" />
+                  </label>
+                  <button 
+                    type="button"
+                    id="btn-reset-chapter-photo"
+                    onclick="resetChapterPhoto(state.currentChapterIndex)"
+                    class="hidden px-3 py-2.5 rounded-xl border border-ink bg-paper hover:bg-paperDark text-ink font-bold text-xs">
+                    🔄 還原懷舊相
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 sm:p-6 bg-goldLight/70 border-b-2 border-borderWarm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <div class="text-xs sm:text-sm font-bold text-stampRed uppercase tracking-wider">
+              💬 今章懷緬主題問題
+            </div>
+            <h3 id="chapter-main-question" class="font-serif font-bold text-xl sm:text-2xl text-ink leading-snug">
+              細個喺香港生活嗰陣，你屋企附近同童年最深刻嘅畫面係點樣嘅呢？
+            </h3>
+          </div>
+          <button 
+            type="button"
+            onclick="readCurrentChapterPrompt()"
+            class="shrink-0 senior-btn px-5 py-3 rounded-xl bg-jade hover:bg-jadeDark text-white font-bold text-base flex items-center gap-2 shadow-sm transition">
+            <span>🔊</span>
+            <span>廣東話讀題目</span>
+          </button>
+        </div>
+
+        <!-- SPECIAL DAILY ROUTINE PANEL (Chapter 5) -->
+        <div id="daily-routine-panel" class="hidden p-5 sm:p-6 bg-amber-50/80 border-b-2 border-gold space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gold/40 pb-3">
+            <div class="space-y-1">
+              <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-stampRed text-white font-bold text-xs">
+                🍵 日常生活專屬互動
+              </span>
+              <h4 class="font-serif font-black text-xl sm:text-2xl text-ink">
+                🕒 我嘅一日生活作息與飲食喜好（點選你嘅習慣）
+              </h4>
+            </div>
+            <span class="text-xs sm:text-sm text-inkMuted">揀選後會自動寫入日常檔案</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-paperCard p-4 rounded-2xl border-2 border-borderWarm space-y-3">
+              <div class="relative h-28 rounded-xl overflow-hidden border border-borderWarm">
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80" alt="早茶" class="w-full h-full object-cover vintage-photo-filter"/>
+                <span class="absolute bottom-1.5 left-2 px-2 py-0.5 rounded bg-ink/80 text-white text-xs font-bold">🌅 朝早一盅兩件</span>
+              </div>
+              <div class="font-serif font-bold text-lg text-stampRed">🌅 朝早習慣</div>
+              <div id="routine-tags-morning" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="bg-paperCard p-4 rounded-2xl border-2 border-borderWarm space-y-3">
+              <div class="relative h-28 rounded-xl overflow-hidden border border-borderWarm">
+                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80" alt="老火湯" class="w-full h-full object-cover vintage-photo-filter"/>
+                <span class="absolute bottom-1.5 left-2 px-2 py-0.5 rounded bg-ink/80 text-white text-xs font-bold">☀️ 晏晝老火靚湯</span>
+              </div>
+              <div class="font-serif font-bold text-lg text-gold">☀️ 晏晝時光</div>
+              <div id="routine-tags-afternoon" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="bg-paperCard p-4 rounded-2xl border-2 border-borderWarm space-y-3">
+              <div class="relative h-28 rounded-xl overflow-hidden border border-borderWarm">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="晚飯" class="w-full h-full object-cover vintage-photo-filter"/>
+                <span class="absolute bottom-1.5 left-2 px-2 py-0.5 rounded bg-ink/80 text-white text-xs font-bold">🌙 夜晚齊人開飯</span>
+              </div>
+              <div class="font-serif font-bold text-lg text-jadeDark">🌙 夜晚生活</div>
+              <div id="routine-tags-evening" class="flex flex-wrap gap-2"></div>
+            </div>
+          </div>
+
+          <div class="bg-paperCard p-4 rounded-2xl border-2 border-gold flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+            <div class="space-y-1 flex-1">
+              <label for="input-signature-dish" class="block font-serif font-bold text-base sm:text-lg text-ink">
+                🍲 拿手煮或屋企最常食嘅「招牌住家菜／老火湯」：
+              </label>
+              <input 
+                id="input-signature-dish"
+                type="text"
+                oninput="updateSignatureDish(this.value)"
+                placeholder="例如：青紅蘿蔔煲豬骨湯、鹹魚蒸肉餅..."
+                class="w-full px-4 py-2.5 text-base sm:text-lg font-bold bg-paper border-2 border-ink rounded-xl focus:outline-none focus:border-stampRed"
+              />
+            </div>
+            <div class="flex flex-wrap gap-1.5 sm:max-w-xs">
+              <span class="w-full text-xs text-inkMuted font-bold">快速點選：</span>
+              <button type="button" onclick="setSignatureDish('青紅蘿蔔煲豬骨湯＋鹹魚蒸肉餅')" class="px-2.5 py-1.5 rounded-lg bg-goldLight hover:bg-amber-200 text-xs font-bold border border-gold text-ink">🥣 青紅蘿蔔湯＋蒸肉餅</button>
+              <button type="button" onclick="setSignatureDish('一盅兩件（蝦餃、燒賣、叉燒包）')" class="px-2.5 py-1.5 rounded-lg bg-goldLight hover:bg-amber-200 text-xs font-bold border border-gold text-ink">🫖 蝦餃燒賣叉燒包</button>
+            </div>
+          </div>
+
+          <div class="bg-paperCard p-4 rounded-2xl border-2 border-stampRed/80 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+            <div class="space-y-1 flex-1">
+              <label for="input-favourite-restaurant" class="block font-serif font-bold text-base sm:text-lg text-ink">
+                🏪 最愛幫襯邊間「茶樓／冰室／老字號餐廳」：
+              </label>
+              <input 
+                id="input-favourite-restaurant"
+                type="text"
+                oninput="updateFavouriteRestaurant(this.value)"
+                placeholder="例如：蓮香樓、美都冰室、街坊茶樓..."
+                class="w-full px-4 py-2.5 text-base sm:text-lg font-bold bg-paper border-2 border-ink rounded-xl focus:outline-none focus:border-stampRed"
+              />
+            </div>
+            <div class="flex flex-wrap gap-1.5 sm:max-w-xs">
+              <span class="w-full text-xs text-inkMuted font-bold">快速點選：</span>
+              <button type="button" onclick="setFavouriteRestaurant('屋企樓下熟絡舊茶居（同街坊一盅兩件）')" class="px-2.5 py-1.5 rounded-lg bg-goldLight hover:bg-amber-200 text-xs font-bold border border-gold text-ink">🫖 樓下熟絡茶居</button>
+              <button type="button" onclick="setFavouriteRestaurant('蓮香樓／傳統大茶樓（點心車）')" class="px-2.5 py-1.5 rounded-lg bg-goldLight hover:bg-amber-200 text-xs font-bold border border-gold text-ink">🏮 蓮香樓／傳統大茶樓</button>
+              <button type="button" onclick="setFavouriteRestaurant('美都冰室／金鳳茶餐廳（絲襪奶茶蛋撻）')" class="px-2.5 py-1.5 rounded-lg bg-goldLight hover:bg-amber-200 text-xs font-bold border border-gold text-ink">🍍 懷舊冰室／茶餐廳</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP A: 9 WARM-UP MEMORY CARDS -->
+        <div class="p-5 sm:p-6 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-full bg-stampRed text-white font-bold flex items-center justify-center text-sm">1</span>
+              <h4 class="font-serif font-bold text-lg sm:text-xl text-ink">
+                第一步：從 9 個香港真實回憶選項中，點選最貼近你經歷嘅一張卡
+              </h4>
+            </div>
+            <span id="chapter-matched-events-pill" class="text-xs sm:text-sm font-bold text-stampRed bg-goldLight px-3 py-1 rounded-full border border-gold">
+              提供 9 項豐富記憶選擇（已動態對齊出生年份）
+            </span>
+          </div>
+
+          <div id="memory-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5"></div>
+        </div>
+
+        <!-- STEP B: AUDIO RECORDING & TEXT INPUT -->
+        <div id="step-b-input-area" class="p-5 sm:p-6 bg-paper border-t-2 border-borderWarm space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-full bg-jade text-white font-bold flex items-center justify-center text-sm">2</span>
+              <h4 class="font-serif font-bold text-lg sm:text-xl text-ink">
+                第二步：用廣東話開咪講故仔，或者用文字補充細節
+              </h4>
+            </div>
+
+            <button 
+              type="button"
+              id="btn-star-memory"
+              onclick="toggleStarCurrentChapter()"
+              class="px-4 py-2.5 rounded-xl border-2 border-gold bg-paperCard hover:bg-goldLight font-bold text-sm sm:text-base flex items-center gap-2 transition shadow-sm">
+              <span id="star-icon" class="text-xl">☆</span>
+              <span id="star-label">標記為重要記憶</span>
+            </button>
+          </div>
+
+          <!-- ROBUST RECORDING PANEL -->
+          <div class="bg-paperCard border-2 border-ink rounded-2xl p-4 sm:p-6 shadow-sm space-y-4">
+            <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+              
+              <!-- Primary Toggle Record Button -->
+              <button 
+                type="button"
+                id="btn-voice-record"
+                onclick="toggleVoiceRecording()"
+                class="flex-1 senior-btn py-5 px-6 rounded-2xl bg-stampRed hover:bg-stampRedDark text-white font-serif font-black text-xl sm:text-2xl border-2 border-ink shadow-md flex items-center justify-center gap-3.5 transition">
+                <span id="record-btn-icon" class="text-3xl">🎤</span>
+                <div class="text-left">
+                  <div id="record-btn-text">撳一下開始講故仔（廣東話語音轉字）</div>
+                  <div id="record-btn-subtext" class="text-xs sm:text-sm font-sans font-normal text-white/90">
+                    講完再撳一下就識停，系統會即時變成文字
+                  </div>
+                </div>
+              </button>
+
+              <button 
+                type="button"
+                onclick="simulateCantoneseVoiceInput()"
+                class="senior-btn px-5 py-4 rounded-2xl bg-jadeLight hover:bg-jade/20 text-jadeDark border-2 border-jade font-bold text-sm sm:text-base flex flex-col items-center justify-center shrink-0 transition"
+                title="即時模擬長者廣東話口述示範">
+                <span class="text-lg">🎙️ 示範長者口述</span>
+                <span class="text-xs font-normal text-jadeDark/80">（免咪高峰即時測試）</span>
+              </button>
+            </div>
+
+            <!-- Mic Device Selector Bar -->
+            <div class="flex flex-wrap items-center justify-between gap-2 px-3.5 py-2.5 rounded-xl bg-paper border border-borderWarm text-xs sm:text-sm">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="font-bold text-ink">🗣️ 語音識別語言：</span>
+                <select 
+                  id="speech-lang-select"
+                  onchange="onSpeechLangChange(this.value)"
+                  class="px-2.5 py-1 rounded-lg border border-ink bg-paperCard font-bold text-stampRed">
+                  <option value="zh-HK" selected>香港廣東話 (zh-HK)</option>
+                  <option value="yue-Hant-HK">地道粵語口語 (yue-Hant-HK)</option>
+                  <option value="zh-TW">繁體國語 (zh-TW)</option>
+                </select>
+              </div>
+              <div id="stt-engine-badge" class="text-jadeDark font-bold">
+                ✓ 專注語音轉文字模式已就緒
+              </div>
+            </div>
+
+            <!-- Live Status & Visualizer -->
+            <div id="recording-status-bar" class="hidden bg-stampRed/10 border-2 border-stampRed rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <span class="w-4 h-4 rounded-full bg-stampRed animate-ping shrink-0"></span>
+                <div>
+                  <div class="font-bold text-stampRed text-base sm:text-lg" id="recording-status-title">正在聆聽你講廣東話... 請對住咪高峰慢慢講</div>
+                  <div class="text-xs sm:text-sm text-inkMuted" id="live-interim-transcript">正在接收真實麥克風訊號...（講完請再撳一下紅色大掣停止）</div>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 self-end sm:self-center">
+                <span id="recording-timer" class="font-mono font-bold text-lg text-stampRed">00:00</span>
+              </div>
+            </div>
+
+            <div class="space-y-1.5 pt-1">
+              <div class="text-xs sm:text-sm font-bold text-inkMuted">
+                💡 撳一下加入香港當年常用詞彙：
+              </div>
+              <div id="era-vocab-chips" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="space-y-2">
+              <label for="chapter-raw-input" class="block font-bold text-sm sm:text-base text-ink flex items-center justify-between">
+                <span>📝 你的口述記錄／文字內容（可以直接修改）：</span>
+                <button type="button" onclick="clearCurrentChapterText()" class="text-xs text-inkMuted hover:text-stampRed underline">清空重寫</button>
+              </label>
+              <textarea 
+                id="chapter-raw-input"
+                rows="4"
+                oninput="onRawInputChanged(this.value)"
+                placeholder="揀咗上面嘅回憶卡之後，撳紅色大掣開咪講故仔，或者喺呢度打字..."
+                class="w-full p-4 text-lg sm:text-xl leading-relaxed bg-paper border-2 border-ink rounded-xl focus:outline-none focus:ring-4 focus:ring-jade/25 focus:border-jade"
+              ></textarea>
+            </div>
+
+            <!-- AI ASSISTANT -->
+            <div class="pt-2 border-t border-borderWarm space-y-4">
+              <div class="flex flex-col sm:flex-row gap-3">
+                <button 
+                  type="button"
+                  id="btn-ai-followup"
+                  onclick="triggerAIFollowUp()"
+                  class="flex-1 senior-btn px-5 py-3.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-ink border-2 border-gold font-bold text-base sm:text-lg flex items-center justify-center gap-2 shadow-sm transition">
+                  <span>💬</span>
+                  <span>AI 溫柔追問（幫我諗起更多細節）</span>
+                </button>
+
+                <button 
+                  type="button"
+                  id="btn-ai-polish"
+                  onclick="triggerAIPolish()"
+                  class="flex-1 senior-btn px-5 py-3.5 rounded-xl bg-jade hover:bg-jadeDark text-white border-2 border-ink font-bold text-base sm:text-lg flex items-center justify-center gap-2 shadow-sm transition">
+                  <span>✨</span>
+                  <span>AI 整理成自傳段落</span>
+                </button>
+              </div>
+
+              <div id="ai-followup-box" class="hidden bg-goldLight border-2 border-gold rounded-2xl p-4 sm:p-5 space-y-3">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="inline-flex items-center gap-1.5 font-bold text-sm text-stampRed">
+                    <span>🍵</span> AI 懷緬伴侶溫柔追問：
+                  </span>
+                  <button type="button" onclick="speakAIFollowUp()" class="px-3 py-1 rounded-lg bg-paperCard border border-gold text-ink font-bold text-xs sm:text-sm flex items-center gap-1">
+                    <span>🔊</span> 讀出追問
+                  </button>
+                </div>
+                <p id="ai-followup-text" class="font-serif font-bold text-lg sm:text-xl text-ink leading-relaxed"></p>
+              </div>
+
+              <div id="ai-polished-box" class="hidden bg-jadeLight/70 border-2 border-jade rounded-2xl p-4 sm:p-5 space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-lg">📖</span>
+                    <span class="font-serif font-bold text-base sm:text-lg text-jadeDark">
+                      已為你整理好自傳段落（可切換文體）：
+                    </span>
+                  </div>
+                  <div class="inline-flex rounded-xl bg-paperCard p-1 border border-jade/40">
+                    <button 
+                      type="button"
+                      id="tab-style-cantonese"
+                      onclick="switchPolishedStyle('cantonese')"
+                      class="px-3 py-1.5 rounded-lg font-bold text-xs sm:text-sm transition bg-jade text-white">
+                      🗣️ 廣東話口語版
+                    </button>
+                    <button 
+                      type="button"
+                      id="tab-style-written"
+                      onclick="switchPolishedStyle('written')"
+                      class="px-3 py-1.5 rounded-lg font-bold text-xs sm:text-sm transition text-ink hover:bg-paperDark">
+                      ✒️ 書面語傳記版
+                    </button>
+                  </div>
+                </div>
+
+                <div id="ai-polished-content" class="p-4 bg-paperCard rounded-xl border border-jade/30 font-serif text-lg sm:text-xl text-ink leading-relaxed"></div>
+
+                <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+                  <span class="text-xs sm:text-sm text-jadeDark">✓ 已自動收錄入《香江歲月》自傳書</span>
+                  <button type="button" onclick="speakPolishedText()" class="px-3.5 py-1.5 rounded-lg bg-jade text-white font-bold text-xs sm:text-sm flex items-center gap-1">
+                    <span>🔊</span> 朗讀呢段自傳
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+            <button 
+              type="button"
+              onclick="prevChapter()"
+              class="senior-btn px-5 py-3.5 rounded-xl border-2 border-ink bg-paperCard hover:bg-paperDark text-ink font-bold text-base sm:text-lg flex items-center justify-center gap-2 transition">
+              <span>←</span>
+              <span>上一頁</span>
+            </button>
+
+            <div class="flex flex-col sm:flex-row gap-3 flex-1 sm:justify-end">
+              <button 
+                type="button"
+                onclick="skipCurrentChapter()"
+                class="senior-btn px-5 py-3.5 rounded-xl border-2 border-borderWarm bg-paper hover:bg-paperDark text-inkMuted font-bold text-base flex items-center justify-center gap-1.5 transition">
+                <span>⏭️</span>
+                <span>跳過呢題</span>
+              </button>
+
+              <button 
+                type="button"
+                id="btn-next-chapter"
+                onclick="nextChapter()"
+                class="senior-btn px-7 py-4 rounded-xl bg-stampRed hover:bg-stampRedDark text-white font-serif font-black text-lg sm:text-xl border-2 border-ink shadow-md flex items-center justify-center gap-2 transition">
+                <span id="next-chapter-label">儲存並進入下一章 →</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 4: BOOK PREVIEW -->
+    <section id="screen-book" class="hidden space-y-8">
+      <div class="bg-paperCard border-2 border-ink rounded-2xl p-4 sm:p-5 shadow-sm flex flex-wrap items-center justify-between gap-4 no-print">
+        <div class="flex items-center gap-3">
+          <button 
+            onclick="goToChapter(0)"
+            class="px-4 py-2.5 rounded-xl border-2 border-ink bg-paper hover:bg-paperDark font-bold text-sm sm:text-base flex items-center gap-1.5 transition">
+            <span>←</span> 返回修改章節
+          </button>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5">
+          <div class="inline-flex rounded-xl bg-paper p-1 border-2 border-ink">
+            <button 
+              type="button"
+              id="book-global-cantonese"
+              onclick="setGlobalBookStyle('cantonese')"
+              class="px-3.5 py-2 rounded-lg font-bold text-xs sm:text-sm transition bg-stampRed text-white">
+              🗣️ 廣東話原味版
+            </button>
+            <button 
+              type="button"
+              id="book-global-written"
+              onclick="setGlobalBookStyle('written')"
+              class="px-3.5 py-2 rounded-lg font-bold text-xs sm:text-sm transition text-ink hover:bg-paperDark">
+              📖 書面語傳記版
+            </button>
+          </div>
+
+          <button 
+            type="button"
+            onclick="toggleVoiceModal(true)"
+            class="px-4 py-3 rounded-xl bg-goldLight hover:bg-amber-200 text-ink font-bold text-sm sm:text-base border-2 border-ink shadow-sm flex items-center gap-1.5 transition">
+            <span id="book-voice-btn-icon">👩</span>
+            <span id="book-voice-btn-label">切換朗讀聲線</span>
+          </button>
+
+          <button 
+            type="button"
+            onclick="window.print()"
+            class="px-5 py-3 rounded-xl bg-jade hover:bg-jadeDark text-white font-bold text-sm sm:text-base border-2 border-ink shadow-sm flex items-center gap-2 transition">
+            <span>🖨️</span>
+            <span>列印實體自傳 / 儲存 PDF</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hk-vintage-frame bg-paperCard rounded-3xl p-6 sm:p-10 md:p-12 text-center relative overflow-hidden print-break-inside">
+        <div class="corner-ornament top-4 left-4 border-t-4 border-l-4"></div>
+        <div class="corner-ornament top-4 right-4 border-t-4 border-r-4"></div>
+        <div class="corner-ornament bottom-4 left-4 border-b-4 border-l-4"></div>
+        <div class="corner-ornament bottom-4 right-4 border-b-4 border-r-4"></div>
+
+        <div class="max-w-2xl mx-auto space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-goldLight border border-gold text-gold font-serif font-bold text-xs sm:text-sm tracking-widest">
+            香江歲月・個人有聲生命傳記
+          </div>
+
+          <div class="border-y-4 border-double border-ink py-6 px-4 bg-paper/70 space-y-4">
+            <div class="mx-auto w-44 sm:w-52 hk-photo-frame rounded-2xl">
+              <img 
+                id="book-cover-photo"
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=700&q=80" 
+                alt="自傳封面珍藏相片" 
+                class="w-full h-36 sm:h-40 object-cover rounded-lg vintage-photo-filter"
+              />
+              <div class="text-xs font-serif text-inkMuted pt-1.5">📸 歲月留影・生命主角</div>
+            </div>
+            <h2 id="book-cover-title" class="font-serif font-black text-3xl sm:text-5xl text-ink tracking-wide leading-tight">
+              《陳伯（陳志強）的人生自傳》
+            </h2>
+            <p id="book-cover-subtitle" class="font-serif text-lg sm:text-2xl text-stampRed font-bold">
+              生於 1948 年・從深水埗走過獅子山下的流金歲月
+            </p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 sm:gap-5 pt-2">
+            <div class="bg-paper p-3.5 sm:p-4 rounded-2xl border-2 border-borderWarm">
+              <div id="stat-chapters-count" class="font-serif font-black text-2xl sm:text-3xl text-ink">6 章</div>
+              <div class="text-xs sm:text-sm text-inkMuted font-bold mt-0.5">人生與日常記錄</div>
+            </div>
+            <div class="bg-goldLight p-3.5 sm:p-4 rounded-2xl border-2 border-gold">
+              <div id="stat-stars-count" class="font-serif font-black text-2xl sm:text-3xl text-stampRed">4 顆 ⭐</div>
+              <div class="text-xs sm:text-sm text-inkMuted font-bold mt-0.5">珍藏重要記憶</div>
+            </div>
+            <div class="bg-jadeLight p-3.5 sm:p-4 rounded-2xl border-2 border-jade/40">
+              <div id="stat-audio-count" class="font-serif font-black text-2xl sm:text-3xl text-jadeDark">6 段 🔊</div>
+              <div class="text-xs sm:text-sm text-inkMuted font-bold mt-0.5">原聲粵語記憶</div>
+            </div>
+          </div>
+
+          <div class="pt-2 no-print">
+            <button 
+              type="button"
+              onclick="playFullAutobiographyAudio()"
+              class="senior-btn mx-auto px-8 py-4 rounded-2xl bg-stampRed hover:bg-stampRedDark text-white font-serif font-black text-lg sm:text-xl border-2 border-ink shadow-md flex items-center justify-center gap-3 transition">
+              <span>▶️</span>
+              <span>順序朗讀整本《香江歲月》有聲自傳</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPECIAL DAILY LIFE ARCHIVE IN BOOK -->
+      <div id="book-daily-life-card" class="hk-vintage-frame bg-paperCard rounded-3xl p-6 sm:p-8 space-y-5 print-break-inside"></div>
+
+      <!-- CHAPTERS CONTAINER -->
+      <div id="book-chapters-container" class="space-y-6"></div>
+
+      <!-- FAMILY WALL -->
+      <div class="hk-vintage-frame bg-paperCard rounded-3xl p-6 sm:p-8 space-y-6 print-break-inside">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b-2 border-borderWarm pb-4">
+          <div>
+            <div class="text-xs sm:text-sm font-bold text-jade uppercase tracking-wider">
+              跨代共創與傳承・對應《80億分之1》留言紀念館
+            </div>
+            <h3 class="font-serif font-black text-2xl sm:text-3xl text-ink mt-0.5">
+              👨‍👩‍👧 家人與後代留言館
+            </h3>
+          </div>
+          <span class="text-sm text-inkMuted">讓仔女、孫仔孫女寫低祝福</span>
+        </div>
+
+        <div class="hk-photo-frame rounded-2xl p-3 bg-paper">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+            <div class="md:col-span-2 relative h-48 sm:h-56 rounded-xl overflow-hidden bg-paperDark">
+              <img 
+                id="family-wall-photo"
+                src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1000&q=80" 
+                alt="全家福" 
+                class="w-full h-full object-cover vintage-photo-filter"
+              />
+              <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-ink/80 text-amber-200 font-bold text-xs">
+                📸 家族珍藏全家福
+              </span>
+            </div>
+            <div class="p-2 space-y-3 text-left">
+              <h4 class="font-serif font-bold text-xl text-ink">「一家人齊齊整整，就係福氣」</h4>
+              <p class="text-xs sm:text-sm text-inkMuted leading-relaxed">
+                屋企人可以上傳全家福，連同心底話一齊印出嚟永久珍藏。
+              </p>
+              <label class="inline-flex cursor-pointer px-4 py-2.5 rounded-xl bg-jade hover:bg-jadeDark text-white font-bold text-xs sm:text-sm items-center gap-1.5 shadow-sm transition no-print">
+                <span>📷</span>
+                <span>上傳全家福</span>
+                <input type="file" accept="image/*" class="hidden" onchange="uploadFamilyWallPhoto(event)" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div id="family-messages-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+        <div class="bg-paper p-4 sm:p-5 rounded-2xl border-2 border-borderWarm space-y-4 no-print">
+          <h4 class="font-serif font-bold text-lg text-ink">✍️ 為長者加上新留言：</h4>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <input 
+              id="family-author-input"
+              type="text"
+              placeholder="你嘅稱呼（如：孫女 嘉欣）"
+              class="px-4 py-3 rounded-xl border-2 border-ink bg-paperCard font-bold text-base"
+            />
+            <input 
+              id="family-relation-input"
+              type="text"
+              placeholder="關係（如：孫女）"
+              class="px-4 py-3 rounded-xl border-2 border-ink bg-paperCard text-base"
+            />
+            <button 
+              type="button"
+              onclick="addFamilyMessage()"
+              class="px-5 py-3 rounded-xl bg-jade hover:bg-jadeDark text-white font-bold text-base border-2 border-ink shadow-sm transition">
+              ＋ 貼上留言館
+            </button>
+          </div>
+          <textarea 
+            id="family-message-input"
+            rows="2"
+            placeholder="寫低你想同長者講嘅心底話..."
+            class="w-full p-3.5 rounded-xl border-2 border-ink bg-paperCard text-base"
+          ></textarea>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- VOICE PICKER MODAL -->
+  <div id="voice-picker-modal" class="fixed inset-0 z-50 hidden bg-ink/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 no-print">
+    <div class="bg-paperCard border-4 border-ink rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-5 sm:p-8 space-y-6 shadow-2xl">
+      <div class="flex items-start justify-between gap-4 border-b-2 border-ink pb-4">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-jade text-white font-bold text-xs">廣東話旁白聲線</span>
+          <h2 class="font-serif font-black text-2xl sm:text-3xl text-ink mt-1">
+            🎙️ 揀選你鍾意嘅廣東話聲音（男女各 3 款）
+          </h2>
+          <p class="text-xs sm:text-sm text-inkMuted mt-1">
+            提供 3 款女聲與 3 款低頻胸腔共鳴男聲，點擊卡片即可試聽。
+          </p>
+        </div>
+        <button onclick="toggleVoiceModal(false)" class="px-4 py-2 rounded-xl bg-ink text-white font-bold text-base hover:bg-stampRed transition shrink-0">
+          ✕ 完成
+        </button>
+      </div>
+
+      <div id="modal-voice-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+      <div class="bg-paper p-3.5 rounded-xl border border-borderWarm flex flex-wrap items-center justify-between gap-2 text-xs text-inkMuted">
+        <span>💡 系統支援 100% 純正香港廣東話發音引擎。</span>
+        <button type="button" onclick="previewSelectedVoice()" class="px-3 py-1.5 rounded-lg bg-jade text-white font-bold text-xs hover:bg-jadeDark transition">
+          🔊 試聽目前聲線
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-box" class="fixed bottom-5 right-5 z-50 hidden bg-ink text-white px-5 py-3.5 rounded-2xl shadow-xl border-2 border-gold font-bold text-base flex items-center gap-2.5 no-print">
+    <span id="toast-icon">✨</span>
+    <span id="toast-text">已儲存進度</span>
+  </div>
+
+  <footer class="border-t border-borderWarm bg-paperDark/60 py-5 px-4 text-center text-xs sm:text-sm text-inkMuted mt-12 no-print">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div>《香江歲月：我的人生自傳》香港長者懷緬自傳遊戲原型｜致敬每一位走過獅子山下歲月的長者</div>
+      <div class="flex items-center gap-3">
+        <button onclick="resetAllData()" class="underline hover:text-stampRed">重設資料</button>
+        <span>・</span>
+        <button onclick="loadDemoProfileAndBook()" class="underline hover:text-jadeDark font-bold">載入陳伯示範</button>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const HK_DISTRICTS = [
+      { id: '深水埗／石硤尾', label: '深水埗／石硤尾', desc: '唐樓、大排檔、早期公屋' },
+      { id: '九龍城／黃大仙', label: '九龍城／黃大仙', desc: '寨城街坊、啟德飛機聲' },
+      { id: '灣仔／銅鑼灣', label: '灣仔／銅鑼灣', desc: '電車叮叮、舊式茶樓' },
+      { id: '觀塘／新蒲崗', label: '觀塘／新蒲崗', desc: '工廠大廈、獅子山下拼搏' },
+      { id: '新界圍村／寮屋', label: '新界圍村／寮屋', desc: '田野山海、鄉里人情' },
+      { id: '內地移居香港', label: '內地移居香港', desc: '落腳香江、白手興家' }
+    ];
+
+    const DAILY_ROUTINE_OPTIONS = {
+      morning: ['公園晨運耍太極', '茶樓飲早茶一盅兩件', '買份報紙慢慢睇', '落街市買新鮮餸', '聽晨早電台節目'],
+      afternoon: ['煲老火湯煮拿手菜', '聽電台廣播劇／粵曲', '同街坊打衛生麻雀', '去冰室飲奶茶食蛋撻', '午睡片刻養足精神'],
+      evening: ['全家齊人開飯食住家菜', '追睇《歡樂今宵》電視劇', '飯後落公園散步乘涼', '同屋企人切生果傾偈', '聽懷舊金曲準備安睡']
+    };
+
+    const CANTONESE_VOICE_PROFILES = [
+      {
+        id: 'f_sau_lan',
+        gender: 'female',
+        name: '秀蘭姐',
+        tag: '溫柔親切女聲',
+        avatar: '👩',
+        desc: '語速適中、溫暖柔和嘅香港女聲，好似街坊大姐陪你傾偈',
+        pitch: 1.05,
+        rate: 0.94,
+        sampleText: '你好呀！我係秀蘭姐，好高興今日可以陪你一齊飲啖茶，慢慢傾下你當年喺香港嘅珍貴往事。'
+      },
+      {
+        id: 'f_yuen_kwan',
+        gender: 'female',
+        name: '婉君',
+        tag: '清脆開朗女聲',
+        avatar: '👩‍💼',
+        desc: '音調明亮精神、咬字特別清晰嘅香港女聲',
+        pitch: 1.20,
+        rate: 1.0,
+        sampleText: '哈囉老友記！我係婉君呀，陣間我會逐條題目清清楚楚讀俾你聽㗎！'
+      },
+      {
+        id: 'f_man_ching',
+        gender: 'female',
+        name: '文靜姑姐',
+        tag: '沉穩慈祥女聲',
+        avatar: '👵',
+        desc: '語速較慢、溫婉慈祥嘅香港長輩女聲',
+        pitch: 0.92,
+        rate: 0.86,
+        sampleText: '你好呀，我係文靜姑姐。唔使急，最緊要慢慢講，我會一字一句幫你讀出呢本自傳。'
+      },
+      {
+        id: 'm_chi_keung',
+        gender: 'male',
+        name: '志強叔',
+        tag: '醇厚穩重香港男聲',
+        avatar: '👨',
+        desc: '沉穩渾厚嘅香港中年男聲，低音飽滿、字正腔圓',
+        pitch: 0.62,
+        rate: 0.88,
+        sampleText: '你好呀老友記！我係志強叔，今日同你一齊回顧獅子山下嘅流金歲月。'
+      },
+      {
+        id: 'm_ka_chun',
+        gender: 'male',
+        name: '家俊',
+        tag: '精神陽光青年男聲',
+        avatar: '🧑',
+        desc: '中低音、爽朗清晰嘅香港青年男聲',
+        pitch: 0.70,
+        rate: 0.94,
+        sampleText: '早晨呀！我係家俊，好開心可以聽你講以前香港嘅故仔！'
+      },
+      {
+        id: 'm_chung_pak',
+        gender: 'male',
+        name: '松柏爺爺',
+        tag: '深沉磁性講古男聲',
+        avatar: '👴',
+        desc: '極低沉磁性、慢條斯理嘅香港長輩男聲',
+        pitch: 0.48,
+        rate: 0.80,
+        sampleText: '各位老友記你好，我係松柏。每一段走過嘅歲月都係無價寶。'
+      }
+    ];
+
+    const HK_HISTORICAL_TIMELINE = [
+      {
+        year: 1937,
+        title: '七七事變與戰前香江',
+        vocab: '戰前唐樓',
+        desc: '大批內地同胞南來香港，街道騎樓林立',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2R2VqhNH4lXKl3OgUixnN4o-00eUVnS4bF0VAZ10swIWgnANWiRa7SQM&s=10'
+      },
+      {
+        year: 1941,
+        title: '1941-1945年日佔三年零八個月',
+        vocab: '三年零八個月',
+        desc: '經歷配給糧食、走難返鄉與戰火歲月',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlDgmGqwumdXL6fj06b-cMQcak3yIJWWYlEQgQ5-FfHw&s=10'
+      },
+      {
+        year: 1945,
+        title: '1945年香港重光',
+        vocab: '香港重光',
+        desc: '戰後百廢待興，街坊重聚重建家園',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS-rpCEmhK0K5-Grs9Fulqb4x8EdMFj9O225twmKXAgw&s=10'
+      },
+      {
+        year: 1949,
+        title: '1949年人口急增與天台小學',
+        vocab: '天台小學',
+        desc: '大量人口落腳香江，木屋區與天台學校興起',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH0M6wfq-bKE2raLMahROAx-_FQA9nG8tlzfxQjOqrRQ&s=10'
+      },
+      {
+        year: 1953,
+        title: '1953年石硤尾大火與公屋誕生',
+        vocab: '徙置區七層大廈',
+        desc: '催生香港第一代「H型」七層徙置大廈',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgEdJv7Ab_Lp2wdwAnZf1O2D1F_4nth_dAAPDCxVQ_ww&s=10'
+      },
+      {
+        year: 1959,
+        title: '1950年代末塑膠花與工廠起飛',
+        vocab: '穿膠花',
+        desc: '屋企客廳穿膠花、紅A塑膠與製衣廠興起',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPyiiEqf-F7sq_lYYSePRlL1ljagK1uxDyiwjIRLHStC0nc2eDGyyq00A&s=10'
+      },
+      {
+        year: 1962,
+        title: '1962年颱風溫黛襲港',
+        vocab: '颱風溫黛',
+        desc: '十號風球威力驚人，街坊守望相助渡過風災',
+        photoUrl: 'https://cdn.hk01.com/di/media/images/1852139/org/a045a2d4b79b8f4dc4ba21e35d898eed.jpg/emWctaPqSmWXyXlMPv2UQJ8vLPbnc66pNeYHLzXmBy8?v=w1280r16_9'
+      },
+      {
+        year: 1963,
+        title: '1963年香港大制水（四日供水一次）',
+        vocab: '大制水排街喉',
+        desc: '全街拎住紅A膠桶同水桶排長龍去街喉擔水',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUnzOVim74gYQ9exwtcbsqe4xzt3QAT3vK4VFXu5ExMQ&s=10'
+      },
+      {
+        year: 1967,
+        title: '1967年《歡樂今宵》開播與無綫電視啟播',
+        vocab: '《歡樂今宵》',
+        desc: '街坊圍喺涼茶舖或鄰居屋企門口追睇黑白電視',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZc0InXdbcThHWAQUInUJsEJ12E9Zrn6Y-rcU9aNSyyg&s=10'
+      },
+      {
+        year: 1972,
+        title: '1972年紅磡海底隧道通車與十年建屋計劃',
+        vocab: '紅隧通車',
+        desc: '過海唔使淨係靠渡輪，新市鎮公屋陸續落成',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3IxFCblHfcgTKgvuIb5TjkUBJ1GM0fazbpgGnODGYDQ&s=10'
+      },
+      {
+        year: 1973,
+        title: '1973年股市狂潮與魚翅撈飯',
+        vocab: '魚翅撈飯',
+        desc: '見證70年代香港經濟急促起飛與股市起落',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUrJd5y-tOR-L0XVaDHbD3fYSKQYYrDI0BFU7Ki7C46A&s=10'
+      },
+      {
+        year: 1974,
+        title: '1974年廉政公署成立（ICAC）',
+        vocab: '廉記咖啡',
+        desc: '社會風氣革新，香港邁向廉潔現代都市',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrJLV_2Cn7V5aKuydpT7m4twqfHC-vrTlGzDcERuP7pA&s=10'
+      },
+      {
+        year: 1979,
+        title: '1979年地下鐵路通車',
+        vocab: '地鐵通車',
+        desc: '第一班地鐵由觀塘開往石硤尾，交通大變革',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH0KZmcHAn6V_c5N-HMQ5wx1F_21LI9p9GwjQ7HZ5JTg&s=10'
+      },
+      {
+        year: 1984,
+        title: '1980年代香港製造與尖東霓虹璀璨',
+        vocab: '東方之珠',
+        desc: '粵語流行曲、港產片黃金盛世與工業轉型',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OK6UxrzrctEW2cmnKQ3WjhlMfcYZcnidQqEw1xF_bw&s=10'
+      },
+      {
+        year: 1997,
+        title: '1997年香港回歸與青馬大橋通車',
+        vocab: '97回歸',
+        desc: '見證歷史交接時刻與赤鱲角新機場啟用',
+        photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEtMKzV_O1IwOOVmqCIsXzt-JDYxI_MVv4Jd-Kp9JnbQ&s=10'
+      },
+      {
+        year: 2003,
+        title: '2003年全港同舟共濟抗擊沙士（SARS）',
+        vocab: '沙士同舟共濟',
+        desc: '戴口罩、漂白水消毒，香港人發揮守望精神',
+        photoUrl: 'https://www.google.com/imgres?q=2003%E5%B9%B4%E5%85%A8%E6%B8%AF%E5%90%8C%E8%88%9F%E5%85%B1%E6%BF%9F%E6%8A%97%E6%93%8A%E6%B2%99%E5%A3%AB&imgurl=https%3A%2F%2Fwww.ourchinastory.com%2Fimages%2Fcontent%2Fhong-kong%2F2021%2F03%2F%25E7%2595%25B6%25E4%25BB%25A3%25E4%25B8%25AD%25E5%259C%258B-%25E9%25A6%2599%25E6%25B8%25AF%25E6%25AD%25B7%25E5%258F%25B2-%25E6%25B7%2598%25E5%25A4%25A7%25E8%258A%25B1%25E5%259C%2592-%25E6%25B2%2599%25E5%25A3%25ABSARS-%25E6%25A8%2593%25E5%2583%25B92_x1.jpg&imgrefurl=https%3A%2F%2Fwww.ourchinastory.com%2Fzh%2F1185&docid=jNtHLtK1-vjiuM&tbnid=CT-E-tjnMIhkqM&vet=12ahUKEwjMguPtl8iXAxUxjOEIHeLLKhcQnPAOegQIPhAA..i&w=1000&h=678&hcb=2&ved=2ahUKEwjMguPtl8iXAxUxjOEIHeLLKhcQnPAOegQIPhAA'
+      },
+      {
+        year: 2008,
+        title: '2008年北京奧運馬術在香港舉行',
+        vocab: '奧運馬術',
+        desc: '全城熱烈迎接奧運盛事，長者安享退休生活',
+        photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/2008_Summer_Olympics_Equestrian_Venue_Sha_Tin.jpg/640px-2008_Summer_Olympics_Equestrian_Venue_Sha_Tin.jpg'
+      }
+    ];
+
+    function getEventsInYearRange(startYr, endYr) {
+      const matched = HK_HISTORICAL_TIMELINE.filter(ev => ev.year >= startYr && ev.year <= endYr);
+      if (matched.length > 0) return matched;
+      // Fallback closest event if range falls outside
+      let closest = HK_HISTORICAL_TIMELINE[0];
+      const mid = Math.round((startYr + endYr) / 2);
+      HK_HISTORICAL_TIMELINE.forEach(ev => {
+        if (Math.abs(ev.year - mid) < Math.abs(closest.year - mid)) closest = ev;
+      });
+      return [closest];
+    }
+
+    function formatDynamicEraContext(birthYear, ageRange, district, stageLabel) {
+      const startYr = birthYear + ageRange[0];
+      const endYr = birthYear + ageRange[1];
+      const events = getEventsInYearRange(startYr, endYr);
+      const eventSummaries = events.map(e => {
+        const ageAtEvent = e.year - birthYear;
+        return `【${e.year}年（你約${ageAtEvent}歲）：${e.title}】`;
+      }).join('、');
+      return `📅 ${startYr}–${endYr}年（${district}・${stageLabel}）：當年你親歷嘅香港歷史大事包括 ${eventSummaries}。`;
+    }
+
+    function getDynamicVocabForRange(birthYear, ageRange, baseVocab) {
+      const startYr = birthYear + ageRange[0];
+      const endYr = birthYear + ageRange[1];
+      const events = getEventsInYearRange(startYr, endYr);
+      const dynamicChips = events.map(e => `${e.year}年${e.vocab}`);
+      const merged = [...dynamicChips];
+      baseVocab.forEach(v => {
+        if (!merged.some(m => m.includes(v))) merged.push(v);
+      });
+      return merged.slice(0, 10);
+    }
+
+    const CHAPTER_DEFINITIONS = [
+      {
+        index: 0,
+        shortTitle: '1. 童年歲月',
+        title: '第一章：落地生根（童年歲月・0至12歲）',
+        ageRange: [0, 12],
+        question: '細個喺香港生活嗰陣，你屋企環境係點樣？有無邊件童年往事或者街頭玩意令你最難忘？',
+        vocabChips: ['街喉擔水', '拍公仔紙', '跳飛機', '木屋區', '唐樓板間房', '天台小學', '飛機欖', '麥芽糖', '涼茶舖睇電視'],
+        defaultPhotoUrl: 'https://images.unsplash.com/photo-1518599807935-37015b9cefcb?auto=format&fit=crop&w=900&q=80',
+        photoTitle: '📸 香港真實歷史：唐樓、街頭擔水與巷弄童年',
+        photoCaption: '昔日香港街坊鄰里打開門互相照應，細路仔喺後巷玩跳飛機同拍公仔紙。',
+        getEraContext: (birthYear, district) => formatDynamicEraContext(birthYear, [0, 12], district, '0–12歲童年歲月'),
+        cards: [
+          {
+            id: 'c1_home',
+            icon: '🏘️',
+            photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/ac/HK_Mei_Ho_House_exhibition_2013_-_Hong_Kong_residential_building_history_%E9%96%93%E6%9D%BF%E6%88%BF_room_interior_%E6%9D%BF%E9%96%93%E6%88%BF_partition.jpg?utm_source=zh.wikipedia.org&utm_campaign=index&utm_content=original',
+            title: '唐樓板間房與鄰里守望',
+            desc: '一家幾口迫喺唐樓板間房，走廊共用廚房，街坊好似一家人',
+            demoCantonese: '我細個同屋企人住喺唐樓板間房，幾家人共用一個廚房。雖然環境逼夾，但左鄰右里有咩好嘢都會互相分享，好有人情味。',
+            demoWritten: '童年時期，我們一家人居住在唐樓板間房中，左鄰右里關係極為融洽，互相照應。'
+          },
+          {
+            id: 'c1_water',
+            icon: '🪣',
+            photoUrl: (by) => {
+              const evs = getEventsInYearRange(by, by + 12);
+              return evs[0].photoUrl;
+            },
+            title: (by) => {
+              const evs = getEventsInYearRange(by, by + 12);
+              return `童年親歷：${evs[0].year}年${evs[0].vocab}`;
+            },
+            desc: (by) => {
+              const evs = getEventsInYearRange(by, by + 12);
+              return `約 ${Math.max(1, evs[0].year - by)} 歲時經歷：${evs[0].desc}`;
+            },
+            demoCantonese: '細個屋企環境簡單，親身經歷過當年嘅香港大事同街喉擔水日子，全條街鄰里守望相助一齊捱過。',
+            demoWritten: '童年時期生活簡樸，親身經歷了當年的香港歷史大事與排隊擔水的日子，街坊鄰里守望相助。'
+          },
+          {
+            id: 'c1_play',
+            icon: '🪁',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt7p3hsEq2TNhJdPnlGaURdlRjA6umiBBVyTvO0wULow&s=10',
+            title: '後巷玩拍公仔紙與跳飛機',
+            desc: '放學喺後巷同街坊細路玩拍公仔紙、彈波子、跳飛機',
+            demoCantonese: '嗰陣無錢買玩具，自己執汽水蓋、雪條棍，放學同班細路喺後巷玩拍公仔紙、跳飛機，玩到唔捨得返屋企。',
+            demoWritten: '那個年代沒有昂貴玩具，放學後便與街坊孩童在後巷拍公仔紙、跳飛機，笑聲不斷。'
+          },
+          {
+            id: 'c1_school',
+            icon: '🏫',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE9HI8CJfqEe1Ew-RJa1k-p6iYqGp9xMBUCxgzKkNivbrhNIAud8MsDOQ&s=10auto=format&fit=crop&w=600&q=80',
+            title: (by) => (by <= 1945 ? '戰後義學與街坊學校讀書' : '天台小學與克難讀書環境'),
+            desc: '環境雖然簡陋炎熱，但老師好有心機教書識字',
+            demoCantonese: '我細個讀書環境好簡陋，夏天課室好熱成身汗，但老師好有心機教我哋寫字計數，好珍惜讀書機會。',
+            demoWritten: '童年求學環境雖然簡陋炎熱，但老師盡心盡力教導我們讀書識字，令我銘記一生。'
+          },
+          {
+            id: 'c1_snack',
+            icon: '🍬',
+            photoUrl: 'https://dw-media.tkww.hk/dams/dwproduct/image/202206/12/62a503cae4b0262b809963e6.jpg',
+            title: '街頭小販與飛機欖、麥芽糖',
+            desc: '聽到「噃叭」聲買飛機欖，或者食好味嘅麥芽糖餅',
+            demoCantonese: '最期待聽到樓下傳來吹噃叭聲，係賣飛機欖嘅呀伯。仲有成日食幾毫子一串嘅麥芽糖夾餅。',
+            demoWritten: '最期待聽到街頭賣飛機欖的吹號聲，以及街邊的小吃麥芽糖餅，那是童年最甜的滋味。'
+          },
+          {
+            id: 'c1_village',
+            icon: '🌾',
+            photoUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Fanling_Wai_2005.jpg/250px-Fanling_Wai_2005.jpg?utm_source=zh.wikipedia.org&utm_campaign=parser&utm_content=thumbnailauto=format&fit=crop&w=600&q=80',
+            title: '新界圍村與山野田園生活',
+            desc: '喺鄉下圍村大，赤腳上山摘果、溪邊捉魚',
+            demoCantonese: '我細個住新界圍村，屋企附近全部係農田。日頭同村入面啲細路落溪邊捉魚、上山摘山稔，好自由自在。',
+            demoWritten: '我自幼在圍村長大，四周盡是田野，與村童赤腳在溪邊捉魚、山林玩耍，鄉情濃厚。'
+          },
+          {
+            id: 'c1_squatter',
+            icon: '🛖',
+            photoUrl: 'https://images.unsplash.com/photo-1518599807935-37015b9cefcb?auto=format&fit=crop&w=600&q=80',
+            title: '半山木屋區與寮屋鄰里情',
+            desc: '住喺依山而建嘅木屋區，落大雨要幫手頂實鐵皮屋頂',
+            demoCantonese: '細個住喺山邊木屋區，行石級上落。每次打風落大雨全家人一齊守住間屋，風雨過後街坊互相問候幫手修補。',
+            demoWritten: '幼年居於山邊木屋區，每逢颱風暴雨全家合力守護家園，風災後街坊守望相助。'
+          },
+          {
+            id: 'c1_herbal_tv',
+            icon: '📺',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlIF14iF1XlXPUBWSI2MYMTvEAk0Y-JAAuB8_b18xOiA&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '街頭涼茶舖與聽麗的呼聲',
+            desc: '屋企無電視收音機，落樓下涼茶舖聽粵曲同睇黑白電視',
+            demoCantonese: '嗰陣全條街無幾多部收音機同電視，夜晚成班細路企喺涼茶舖門口聽《麗的呼聲》講古或者睇粵語長片。',
+            demoWritten: '當年影音娛樂匱乏，傍晚常與街坊孩童聚集在涼茶舖門前收聽廣播或觀看黑白節目。'
+          },
+          {
+            id: 'c1_siblings',
+            icon: '👶',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq7qWsYedt2fgPB7Jza3HORV9YIkK3WVy2TT_f136xvA&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '孭住細佬妹幫手煮飯做家務',
+            desc: '身為哥哥姐姐，細個就要用孭帶孭住弟妹、生火水爐煮飯',
+            demoCantonese: '屋企兄弟姊妹多，阿爸阿媽出咗去搵食，我幾歲人仔就要用孭帶孭住細佬妹，仲要識得生火水爐煲粥煮飯。',
+            demoWritten: '家中兄弟姊妹眾多，父母外出謀生時，我小小年紀便需背著弟妹並生火水爐煮飯分擔家務。'
+          }
+        ]
+      },
+      {
+        index: 1,
+        shortTitle: '2. 青春拼搏',
+        title: '第二章：青春拼搏（初出茅廬・13至25歲）',
+        ageRange: [13, 25],
+        question: '十幾廿歲出嚟社會做事，你第一份工係做咩？第一個月出糧點樣用？後生放假最鍾意去邊度消遣？',
+        vocabChips: ['穿膠花', '製衣廠車衣', '電子廠', '茶樓點心車', '第一份人工', '幫補家計', '夜校進修', '睇粵語長片', '紅A塑膠'],
+        defaultPhotoUrl: 'https://www.ourchinastory.com/images/content/uncategorised/2020/11/%E7%95%B6%E4%BB%A3%E4%B8%AD%E5%9C%8B-%E6%84%9F%E5%8B%95%E4%B8%AD%E5%9C%8B-%E5%A4%A7%E5%9F%8E%E5%B0%8F%E4%BA%8B-%E6%9D%8F%E5%A7%90%EF%BC%90%EF%BC%93_x1.jpg',
+        photoTitle: '📸 香港歷史：工廠大廈車衣與工業起飛歲月',
+        photoCaption: '昔日香港製造業起飛，無數年輕人日頭喺工廠密密做，靠雙手撑起屋企。',
+        getEraContext: (birthYear, district) => formatDynamicEraContext(birthYear, [13, 25], district, '13–25歲青春拼搏'),
+        cards: [
+          {
+            id: 'c2_factory',
+            icon: '🧵',
+            photoUrl: 'https://www.ourchinastory.com/images/content/uncategorised/2020/11/%E7%95%B6%E4%BB%A3%E4%B8%AD%E5%9C%8B-%E6%84%9F%E5%8B%95%E4%B8%AD%E5%9C%8B-%E5%A4%A7%E5%9F%8E%E5%B0%8F%E4%BA%8B-%E6%9D%8F%E5%A7%90%EF%BC%90%EF%BC%93_x1.jpg',
+            title: '製衣廠車衣或電子廠裝配',
+            desc: '計件出糧、日夜趕工，同廠入面嘅好工友一齊聽收音機',
+            demoCantonese: '我十幾歲就去咗製衣廠做車衣學徒。每日朝早做到夜晚，第一個月出糧成封交俾阿媽幫補家計。',
+            demoWritten: '十多歲那年我到製衣廠當學徒，每日辛勤趕工，領薪後全數交給母親幫補家計。'
+          },
+          {
+            id: 'c2_service',
+            icon: '🫖',
+            photoUrl: 'https://www.ourchinastory.com/images/content/hong-kong/2022/08/ChineseTeaHouse12_x1.jpg?auto=format&fit=crop&w=600&q=80',
+            title: '舊式茶樓、冰室伙計或酒樓學徒',
+            desc: '天未光返茶樓開工，招呼熟客，練出一身好手藝',
+            demoCantonese: '後生喺舊式茶樓做伙計，清晨五點就要返工開茶位。茶客多數係街坊，大家有講有笑好有人情味。',
+            demoWritten: '年輕時在傳統茶樓擔任伙計，清晨即需開工招呼街坊熟客，人情味極濃。'
+          },
+          {
+            id: 'c2_craft',
+            icon: '🛠️',
+            photoUrl: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80',
+            title: '跟師傅學裝修、木工或地盤手藝',
+            desc: '靠勞力和汗水捱世界，由學師仔做到滿師',
+            demoCantonese: '我跟師傅學裝修木工，捱咗三年零一個月先滿師。日曬雨淋搬重嘢，雖然辛苦但學到一技傍身。',
+            demoWritten: '我跟隨師傅學習木工裝修，苦熬多年終於滿師，靠著勞力自食其力。'
+          },
+          {
+            id: 'c2_office',
+            icon: '📚',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDXl0nSnf538kWh1knj0wGCjYFH96Sky8iAL5BZLk_9g&s=10auto=format&fit=crop&w=600&q=80',
+            title: '洋行寫字樓練習生與夜校半工讀',
+            desc: '日頭做文職，夜晚買個菠蘿包趕去讀夜校進修',
+            demoCantonese: '我好想向上爬，日頭喺中環洋行做文員，夜晚就去讀夜校學英文同會計，希望第日有出頭天。',
+            demoWritten: '為改善生活，我白天在寫字樓工作，晚上堅持到夜校進修英文與會計。'
+          },
+          {
+            id: 'c2_plastic',
+            icon: '📦',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPyiiEqf-F7sq_lYYSePRlL1ljagK1uxDyiwjIRLHStC0nc2eDGyyq00A&s=10auto=format&fit=crop&w=600&q=80',
+            title: '家庭工業：穿膠花、屈鐵線',
+            desc: '一家大小坐在客廳穿膠花、執散工幫補收入',
+            demoCantonese: '當年全家坐喺廳一齊穿膠花、剪膠邊，計件收錢。成間屋都係膠料，係好多香港人嘅集體回憶。',
+            demoWritten: '當年一家大小坐在客廳穿膠花幫補家計，客廳堆滿膠件，是深刻的時代印記。'
+          },
+          {
+            id: 'c2_hawker',
+            icon: '🛒',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStD-eC8rXJQjufBIrAEGnqVJhlcK4IKNt-_uk-dF78Rg&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '街頭小販、走塑膠貨與市集擺檔',
+            desc: '推木頭車喺街市或徙置區樓下擺檔賣日常百貨',
+            demoCantonese: '後生同屋企人推住木頭車喺街市擺檔賣雜貨，遇到小販管理隊仲要推住架車走鬼，好難忘。',
+            demoWritten: '年輕時推著木頭車在街市擺檔，經歷過走鬼的生涯，體會到生活的不易。'
+          },
+          {
+            id: 'c2_dock',
+            icon: '⚓',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdUZPTfWTCPQz3unKxT5R5n-ywVfdSSgZ7ZY5EVHL7rg&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '碼頭搬運、行船出海或船塢技工',
+            desc: '喺維港碼頭落貨、太古黃埔船塢打鐵，或者行船走遍世界',
+            demoCantonese: '後生身體壯健，去咗碼頭同船塢做工，日頭望住維多利亞港啲貨船出出入入，同班師兄弟一齊流汗搵食。',
+            demoWritten: '年輕時在碼頭與船塢工作，看著維港貨輪穿梭，與工友們憑汗水打拼生活。'
+          },
+          {
+            id: 'c2_cinema',
+            icon: '🎬',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPRVN9IVkppBuA6s0REmvyrVrD7IHKsYOYEoa0pT6m8Q&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '放假去大戲院睇粵語長片與食大排檔',
+            desc: '買張前排戲飛睇任白戲寶、曹達華，散場食碗雲吞麵',
+            demoCantonese: '後生做嘢雖然辛苦，但放假最開心係約埋班朋友去大戲院睇粵語長片，散場再去大排檔食碗熱辣辣雲吞麵。',
+            demoWritten: '年輕工作雖苦，假日最愛與友人到大戲院觀看粵語片，散場後到大排檔品嚐雲吞麵。'
+          },
+          {
+            id: 'c2_era_event',
+            icon: '🌧️',
+            photoUrl: (by) => {
+              const evs = getEventsInYearRange(by + 13, by + 25);
+              return evs[0].photoUrl;
+            },
+            title: (by) => {
+              const evs = getEventsInYearRange(by + 13, by + 25);
+              return `親歷${evs[0].year}年：${evs[0].vocab}`;
+            },
+            desc: (by) => {
+              const evs = getEventsInYearRange(by + 13, by + 25);
+              return `約 ${evs[0].year - by} 歲時親身經歷：${evs[0].desc}`;
+            },
+            demoCantonese: '後生出嚟社會拼搏嗰幾年，親身經歷過香港好大嘅時代變遷同風雨，街坊工友大家同舟共濟捱過去。',
+            demoWritten: '青年拼搏歲月中，親歷了香港重要的時代變遷與考驗，與街坊工友同舟共濟渡過難關。'
+          }
+        ]
+      },
+      {
+        index: 2,
+        shortTitle: '3. 成家立室',
+        title: '第三章：成家立室（緣份與家庭・26至45歲）',
+        ageRange: [26, 45],
+        question: '去到成家立室、照顧家庭嘅階段，你同另一半係點樣行過嚟？有無一刻覺得「幾辛苦都值得」？',
+        vocabChips: ['拍拖睇戲', '茶樓擺酒', '龍鳳鈪', '成功上樓公屋', '湊大仔女', '荔園遊樂場', '海洋公園', '供書教學'],
+        defaultPhotoUrl: 'https://www.flamingwheels.online/upload/image/20260703/1783034488498034747.jpg?auto=format&fit=crop&w=900&q=80',
+        photoTitle: '📸 香港歷史：公屋安居、酒樓喜宴與家庭歲月',
+        photoCaption: '兩公婆同甘共苦建立安樂窩，獲派公屋「上樓」果一刻全家人開心到瞓唔著。',
+        getEraContext: (birthYear, district) => formatDynamicEraContext(birthYear, [26, 45], district, '26–45歲成家立室'),
+        cards: [
+          {
+            id: 'c3_marriage',
+            icon: '囍',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLl1ZJxWizJP1PLjzabzq5XVyhdp2wPpFkcazhgrPCoQ&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '相識結為夫婦與酒樓擺喜酒',
+            desc: '經朋友介紹相識，在傳統酒樓筵開數席宴請親朋',
+            demoCantonese: '我同太太喺朋友聚會認識，拍拖去維園行下。結婚嗰年在酒樓擺咗幾圍酒，簡單而溫馨。',
+            demoWritten: '與太太相識後共結連理，在酒樓筵開數席慶祝，展開互敬互愛的一生。'
+          },
+          {
+            id: 'c3_children',
+            icon: '👨‍👩‍👧‍👦',
+            photoUrl: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=600&q=80',
+            title: '仔女出世與供書教學',
+            desc: '日夜做工湊大仔女，督促功課盼望佢哋成才',
+            demoCantonese: '仔女相繼出世後，我同太太日做夜做。最開心係見到佢哋努力讀書畢業，幾辛苦都值得。',
+            demoWritten: '孩子出生後生活雖重，但見到他們健康成長、順利畢業，內心無比安慰。'
+          },
+          {
+            id: 'c3_housing',
+            icon: '🔑',
+            photoUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80',
+            title: '成功「上樓」搬入公屋或置業',
+            desc: '排隊多年終於獲派公屋或買樓，拎住鎖匙開門激動萬分',
+            demoCantonese: '捱咗好多年板間房，終於收到房屋署信派到公屋！拎住鎖匙開門見到有獨立廚廁，全家開心到喊。',
+            demoWritten: '熬過多年唐樓生活，終於獲派公屋上樓，握著鎖匙推開大門的一刻感動萬分。'
+          },
+          {
+            id: 'c3_bonds',
+            icon: '🤝',
+            photoUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80',
+            title: '照顧父母與手足情深',
+            desc: '肩負照顧大家庭責任，逢星期日飲茶聚餐',
+            demoCantonese: '身為家中長輩，我一直幫手照顧屋企人。逢星期日例必買燒味返屋企陪老人家飲茶食飯。',
+            demoWritten: '肩負照顧家庭重任，全力扶持家人，每逢週末必定陪伴父母共享天倫。'
+          },
+          {
+            id: 'c3_leisure',
+            icon: '🎡',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUKs9mtgjnxv75UidX9GLXcNrcIU5H-Hw6u3zS4Y32EuM3CebaaFoXf-A&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '假日帶全家去荔園遊樂場',
+            desc: '帶小朋友去荔園睇大象天奴、擲階磚換香口膠',
+            demoCantonese: '星期日放假一定帶仔女去荔園玩，睇大象天奴、玩碰碰車同擲階磚，係細路仔最開心嘅一日。',
+            demoWritten: '假日必定帶孩子前往荔園遊樂場，看大象天奴與玩樂設施，留下歡樂回憶。'
+          },
+          {
+            id: 'c3_work',
+            icon: '💼',
+            photoUrl: 'https://media.timeout.com/images/105205808/image.jpg?auto=format&fit=crop&w=600&q=80',
+            title: '轉工創業或開夫妻小店',
+            desc: '中年轉行或兩公婆開舖做小生意，為家庭打拼',
+            demoCantonese: '成家之後膽粗粗同另一半開小店做生意，雖然日夜心掛掛，但總算養大成頭家。',
+            demoWritten: '成家後勇敢嘗試創業經營小店，日夜打拼，為家庭奠定穩固基礎。'
+          },
+          {
+            id: 'c3_oceanpark',
+            icon: '🐬',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM3w-HxkI18NyTn1PJz7bFXJJpmqk4jZZ7E7QtjRzfeQ&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '坐纜車去海洋公園或沙田郊遊',
+            desc: '一家大細盛裝去海洋公園坐登山纜車、去沙田踩單車影相',
+            demoCantonese: '嗰陣帶屋企人去海洋公園坐纜車睇海豚表演，或者去沙田踩單車食山水豆腐花，影咗好多靚相。',
+            demoWritten: '假日帶家人前往海洋公園乘搭纜車，或到新界郊遊拍照，共享天倫之樂。'
+          },
+          {
+            id: 'c3_newyear',
+            icon: '🧨',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ2bN3oVQgNseOWRFpXw-vzd2H6hg2_7ZjdNc-uEJjUg&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '歲晚行維園花市與全盒拜年',
+            desc: '年三十晚抱住仔女行花市買桃花，年初一著新衫派利是',
+            demoCantonese: '最熱鬧係每年農曆新年，太太親手整蘿蔔糕同炸油角，年三十晚我抱住個仔騎膊馬行花市。',
+            demoWritten: '每逢農曆新年，家中親手製作賀年糕點，除夕夜帶孩子逛花市，熱鬧非凡。'
+          },
+          {
+            id: 'c3_era_milestone',
+            icon: '🚇',
+            photoUrl: (by) => {
+              const evs = getEventsInYearRange(by + 26, by + 45);
+              return evs[0].photoUrl;
+            },
+            title: (by) => {
+              const evs = getEventsInYearRange(by + 26, by + 45);
+              return `見證${evs[0].year}年：${evs[0].vocab}`;
+            },
+            desc: (by) => {
+              const evs = getEventsInYearRange(by + 26, by + 45);
+              return `約 ${evs[0].year - by} 歲成家階段親歷：${evs[0].desc}`;
+            },
+            demoCantonese: '成家立室嗰廿年，見證住香港起紅隧、通地鐵、起新市鎮，生活一步步改善，真係好難忘。',
+            demoWritten: '成家立室的二十年間，親眼見證香港基建騰飛與社會進步，家庭生活日益安定。'
+          }
+        ]
+      },
+      {
+        index: 3,
+        shortTitle: '4. 流金歲月',
+        title: '第四章：流金歲月（時代變遷・46至65歲）',
+        ageRange: [46, 65],
+        question: '回望人到中年嘅流金歲月，經歷過香港嘅繁華同風浪，你覺得自己最自豪係邊件事？',
+        vocabChips: ['地鐵通車', '霓虹招牌', '東方之珠', '經濟轉型', '1997回歸', '2003沙士同舟共濟', '獨當一面', '榮休光榮'],
+        defaultPhotoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs66v8pVR6MZEUamli_Nwjszl9pJPircYf4Ln1R3Xtt3BYNbbp9adOkFH5&s=10?auto=format&fit=crop&w=900&q=80',
+        photoTitle: '📸 香港歷史：東方之珠霓虹璀璨與時代風浪',
+        photoCaption: '香港經濟起飛，霓虹招牌照亮維港，各行各業精英盡顯獅子山精神。',
+        getEraContext: (birthYear, district) => formatDynamicEraContext(birthYear, [46, 65], district, '46–65歲流金歲月'),
+        cards: [
+          {
+            id: 'c4_career',
+            icon: '🏆',
+            photoUrl: 'https://www.hunterguide.com.hk/storage/media/Informations/p2.jpeg?auto=format&fit=crop&w=600&q=80',
+            title: '在職場獨當一面受人尊重',
+            desc: '由學師仔變成老師傅，用誠信贏得行家同街坊口碑',
+            demoCantonese: '我喺行內由學徒做到老師傅，行家同客人有咩問題都搵我幫手。講信用係我一生原則。',
+            demoWritten: '在工作崗位上克盡己職，由學徒晉升為老師傅，以誠信贏得各方敬重。'
+          },
+          {
+            id: 'c4_storm',
+            icon: '⛵',
+            photoUrl: 'https://orientaldaily.on.cc/cnt/news/20200101/photo/0101-00176-030b1.jpg?auto=format&fit=crop&w=600&q=80',
+            title: '咬緊牙關渡過沙士與經濟風浪',
+            desc: '面對金融風暴與2003年沙士衝擊，同舟共濟撐過去',
+            demoCantonese: '經歷過金融風暴同03年沙士嗰陣市道差，但我信只要肯捱就一定過到關，最後全家人一齊跨過難關。',
+            demoWritten: '面對金融風暴與沙士衝擊，憑藉堅韌意志與家人同心協力，終於走出低谷。'
+          },
+          {
+            id: 'c4_kids_grown',
+            icon: '🎓',
+            photoUrl: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80',
+            title: '見證子女大學畢業與成家',
+            desc: '供到仔女畢業出身、成家立室，心頭大石終於放低',
+            demoCantonese: '見到仔女個個讀書畢業出身，仲結埋婚生埋小朋友，我同太太覺得一世人冇白過。',
+            demoWritten: '親眼見證子女學成畢業、成家立室，心中的石頭終於落地，倍感欣慰。'
+          },
+          {
+            id: 'c4_community',
+            icon: '❤️',
+            photoUrl: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&q=80',
+            title: '參與社區義工與回饋社會',
+            desc: '生活穩定後參加長者中心義工，幫手派飯探訪街坊',
+            demoCantonese: '退休前後開始去社區中心做義工，幫手探訪獨居長者、派飯。幫到人自己都好開心。',
+            demoWritten: '行有餘力投入社區義工服務，探訪長者回饋社會，讓晚年更有意義。'
+          },
+          {
+            id: 'c4_travel',
+            icon: '✈️',
+            photoUrl: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=600&q=80',
+            title: '與老伴去外地或內地旅遊見識',
+            desc: '得閒同老伴報旅行團去外地觀光、返鄉下探親',
+            demoCantonese: '仔女大晒之後，得閒同老伴或者老友記報團去旅行，返過鄉下探親同遊覽名勝，擴闊眼界。',
+            demoWritten: '閒時與老伴結伴外遊，飽覽祖國大好河山與各地風光，享受人生。'
+          },
+          {
+            id: 'c4_skills',
+            icon: '🎨',
+            photoUrl: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80',
+            title: '發展興趣：書法、太極或粵曲',
+            desc: '學耍太極、唱粵曲或寫書法，鍛鍊身心',
+            demoCantonese: '退下工作後開始學唱粵曲同朝早耍太極，結識咗一班志同道合嘅老友記，日日好開心。',
+            demoWritten: '培養書法與耍太極等興趣，鍛鍊身心並結交知己好友。'
+          },
+          {
+            id: 'c4_retirement',
+            icon: '🎖️',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2ABBiGD0FbwzzeQWtBnteQW4Y5SJ4tMY8n5P7hq1zOg&s?auto=format&fit=crop&w=600&q=80',
+            title: '光榮榮休與同事餞別晚宴',
+            desc: '做足幾十年光榮退休，公司同事同徒弟擺酒送金牌紀念',
+            demoCantonese: '做咗幾十年終於光榮退休，最後一日返工班同事同徒弟特登同我擺酒餞行，仲送咗塊紀念金牌俾我，好感動。',
+            demoWritten: '辛勤工作數十載後光榮退休，同事與徒弟設宴餞別並贈予紀念金牌，場面感人。'
+          },
+          {
+            id: 'c4_grandkids',
+            icon: '👶',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb68Q2Hujmo21hAEKx9t-hs0gqddxaZYGFefP1s-sf3w&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '榮升阿爺阿嫲／公公婆婆抱孫',
+            desc: '第一個孫仔孫女出世，幫手煲薑醋、湊孫放學享天倫',
+            demoCantonese: '最開心係榮升做長輩抱孫！孫仔孫女出世嗰陣我親手煲豬腳薑派俾親友，日日接佢放學買零食。',
+            demoWritten: '喜獲麟兒榮升祖輩，親自熬製豬腳薑與親友分享喜悅，含飴弄孫樂也融融。'
+          },
+          {
+            id: 'c4_era_handover',
+            icon: '🎆',
+            photoUrl: (by) => {
+              const evs = getEventsInYearRange(by + 46, by + 65);
+              return evs[0].photoUrl;
+            },
+            title: (by) => {
+              const evs = getEventsInYearRange(by + 46, by + 65);
+              return `見證${evs[0].year}年：${evs[0].vocab}`;
+            },
+            desc: (by) => {
+              const evs = getEventsInYearRange(by + 46, by + 65);
+              return `約 ${evs[0].year - by} 歲中年時期親歷：${evs[0].desc}`;
+            },
+            demoCantonese: '人到中年見證住香港好多歷史時刻，由啟德機場搬去赤鱲角、97回歸到千禧年代，感觸良多。',
+            demoWritten: '人到中年親歷香港眾多重要歷史時刻，見證城市不斷蛻變與發展。'
+          }
+        ]
+      },
+      {
+        index: 4,
+        shortTitle: '5. 日常生活 🍵',
+        title: '第五章：日常滋味（衣食住行與生活點滴・日常生活篇）',
+        ageRange: [30, 75],
+        question: '平時嘅日常生活入面，你最鍾意去茶樓食咩點心？屋企最拿手煮邊道餸同老火湯？',
+        vocabChips: ['一盅兩件', '蝦餃燒賣', '叉燒包', '街市買餸講價', '青紅蘿蔔湯', '鹹魚蒸肉餅', '《歡樂今宵》', '電台廣播劇'],
+        defaultPhotoUrl: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=900&q=80',
+        photoTitle: '📸 香港日常：茶樓一盅兩件與屋企老火靚湯',
+        photoCaption: '朝早茶樓熱辣辣嘅點心、街市買新鮮餸，同埋夜晚全家人圍埋食住家飯，係最溫暖嘅日常。',
+        getEraContext: (birthYear, district) => `🍵 香江日常滋味（${district}衣食住行點滴）：每日朝早茶樓普洱茶、街市買餸聲、廚房老火湯香氣，構成最溫馨嘅日常。`,
+        cards: [
+          {
+            id: 'c5_daily_yumcha',
+            icon: '🫖',
+            photoUrl: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80',
+            title: '晨運後去茶樓飲早茶',
+            desc: '朝早去公園晨運後飲普洱，點蝦餃、燒賣、叉燒包',
+            demoCantonese: '我習慣朝早六點去公園耍太極，跟住落茶樓飲早茶「一盅兩件」。叫返個蝦餃燒賣同盅頭飯，同一班茶友傾下偈。',
+            demoWritten: '習慣清晨到公園晨運，隨後到茶樓飲早茶，點一籠蝦餃燒賣與茶友聚舊。'
+          },
+          {
+            id: 'c5_daily_cooking',
+            icon: '🥘',
+            photoUrl: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80',
+            title: '街市買新鮮餸與煲老火湯',
+            desc: '每日落街市揀新鮮靚料，煲青紅蘿蔔豬骨湯',
+            demoCantonese: '我好享受落街市買餸，同菜檔熟路檔主傾下偈。最拿手煲老火湯同蒸肉餅，一家人食得開開心心。',
+            demoWritten: '享受親自到街市挑選新鮮食材，熬煮滋補老火湯與拿手蒸肉餅。'
+          },
+          {
+            id: 'c5_daily_leisure',
+            icon: '📻',
+            photoUrl: 'https://img.tvb.com/mytvs/poster/1352/h_135103_v1_o.jpg?auto=format&fit=crop&w=600&q=80',
+            title: '聽收音機廣播劇與睇電視',
+            desc: '得閒聽電台粵曲廣播劇，夜晚全家睇《歡樂今宵》',
+            demoCantonese: '日頭開住收音機聽粵曲同廣播劇，夜晚一家人坐定定睇電視。得閒約老友打返幾圈衛生麻雀。',
+            demoWritten: '日間收聽電台廣播劇與粵曲，晚上與家人收看電視節目，閒時與好友切磋麻雀。'
+          },
+          {
+            id: 'c5_daily_festivals',
+            icon: '🏮',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ2bN3oVQgNseOWRFpXw-vzd2H6hg2_7ZjdNc-uEJjUg&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '過時過節辦年貨與炸油角',
+            desc: '農曆新年親手開油鑊炸油角、辦年貨，人情味濃',
+            demoCantonese: '最期待過年一家人行花市、買年貨。以前親手開油鑊炸油角、煎堆，全屋都係年味。',
+            demoWritten: '每逢歲晚辦年貨、親手炸油角，傳統節日充滿溫馨的家庭氣氛。'
+          },
+          {
+            id: 'c5_daily_walk',
+            icon: '🌳',
+            photoUrl: 'https://ya-town.com/upload/img/YATOWN-PARK01.jpg?auto=format&fit=crop&w=600&q=80',
+            title: '公園散步乘涼與街坊傾偈',
+            desc: '晚飯後落樓下公園散步、同街坊吹水下棋',
+            demoCantonese: '晚飯後習慣落樓下公園散步，遇到熟絡嘅街坊就企定定傾下最近嘅新聞同湊孫經。',
+            demoWritten: '晚飯後習慣落樓散步，與街坊鄰里寒暄交流，享受悠閒時光。'
+          },
+          {
+            id: 'c5_daily_market',
+            icon: '🧺',
+            photoUrl: 'https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=600&q=80',
+            title: '熟絡街市檔口買半斤唐菜',
+            desc: '去街市買餸檔買半斤唐菜送棵蔥，人情味十足',
+            demoCantonese: '去街市買餸，熟檔口阿姐每次都會送多兩條蔥或者一塊果皮，呢種人情味依家好難得。',
+            demoWritten: '在街市與熟檔主買菜寒暄，互相贈送小菜，充滿濃郁的人情味。'
+          },
+          {
+            id: 'c5_daily_bing_sutt',
+            icon: '🍍',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQst_tht6caoDKrN2Y-9Vw5gw-a8xpX1fdHwt30SM9H8w&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '三點三去冰室嘆絲襪奶茶蛋撻',
+            desc: '下午茶時間去老字號冰室，叫件新鮮出爐菠蘿油配熱奶茶',
+            demoCantonese: '晏晝三點三最鍾意落街坊冰室，叫返個新鮮出爐嘅酥皮蛋撻或者菠蘿油，配杯香滑絲襪奶茶，正到不得了！',
+            demoWritten: '午後喜愛到傳統冰室品嚐下午茶，點一件新鮮出爐的蛋撻或菠蘿油，配上一杯香濃絲襪奶茶。'
+          },
+          {
+            id: 'c5_daily_mahjong',
+            icon: '🀄',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXQ5cz5-eutQ3u5sjG6AZCDc5sxli1ZRxqgibU4VmX7g&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '約埋老友打幾圈衛生麻雀或捉象棋',
+            desc: '動動腦筋防退化，一路洗牌一路同老友記有講有笑',
+            demoCantonese: '得閒約埋幾位幾十年嘅老街坊打返四圈衛生麻雀，或者喺公園涼亭捉盤中國象棋，動下腦筋又可以聯誼。',
+            demoWritten: '閒暇時與多年老街坊相約打衛生麻雀或下象棋，既能活動腦筋，又能增進情誼。'
+          },
+          {
+            id: 'c5_daily_tram_ferry',
+            icon: '🚋',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuDofKSTlUib_Iva8Z9jxcLM97R9yCPRLH6nY0n0Q-_Q&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '搭叮叮電車或天星小輪吹海風',
+            desc: '坐上層電車頭位睇街景，或者兩蚊搭船過海行街',
+            demoCantonese: '平時出街最鍾意搭叮叮電車坐上層吹風睇街景，或者搭天星小輪過海，望住維港兩岸由舊變新，好寫意。',
+            demoWritten: '平日喜愛乘搭電車上層欣賞街景，或乘天星小輪橫渡維港，感受海風與城市變遷。'
+          }
+        ]
+      },
+      {
+        index: 5,
+        shortTitle: '6. 人生智慧',
+        title: '第六章：人生智慧（晚年回望與寄語・65歲至今）',
+        ageRange: [65, 90],
+        question: '回望呢一世人，你有咩人生道理、家訓或者心底話，想透過呢本自傳留俾後代？',
+        vocabChips: ['知足常樂', '身體健康', '一家人團結', '腳踏實地', '飲早茶', '含飴弄孫', '獅子山精神'],
+        defaultPhotoUrl: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=900&q=80',
+        photoTitle: '📸 香港情懷：時光茶座回望無怨無悔的一生',
+        photoCaption: '千帆過盡，坐喺茶座細味人生，將知足常樂嘅智慧傳承俾下一代。',
+        getEraContext: (birthYear, district) => formatDynamicEraContext(birthYear, [65, Math.max(75, new Date().getFullYear() - birthYear)], district, '65歲至今晚年智慧'),
+        cards: [
+          {
+            id: 'c6_family_motto',
+            icon: '🏮',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3hSHgOkNdxddgYrftexJLHl_0m0nwzloJsqRGF5PzWvnCB3_4S02s1N8&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '腳踏實地與憑良心做人',
+            desc: '將自己一生做人處事嘅原則同家訓，傳承俾後代',
+            demoCantonese: '我一生信奉「腳踏實地、憑良心做人」。希望後代記住：家庭最緊要團結，遇到困難唔好驚。',
+            demoWritten: '我一生堅信腳踏實地、憑良心做事。盼望子孫後代銘記家庭團結為重。'
+          },
+          {
+            id: 'c6_gratitude',
+            icon: '🍵',
+            photoUrl: 'https://img.alicdn.com/imgextra/i1/726785050/O1CN016PKkWJ1nAx6UBmIm3_!!726785050.jpg_q50.jpg_.webp?auto=format&fit=crop&w=600&q=80',
+            title: '知足常樂與平安係福',
+            desc: '回望一生雖然辛苦但充實，感恩香港呢個家',
+            demoCantonese: '回望一生經歷過風雨，今日有得同老伴飲茶、同屋企人食飯，已經係最大福氣。平安係福！',
+            demoWritten: '回顧一生經歷風雨，如今能與老伴品茗、與兒孫共聚，已是最大福氣。'
+          },
+          {
+            id: 'c6_blessing',
+            icon: '❤️',
+            photoUrl: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&q=80',
+            title: '寄語香港新一代自強不息',
+            desc: '寄望年輕一代發揮獅子山下精神，互相守望',
+            demoCantonese: '寄語香港年輕一代：獅子山下大家互相守望、自強不息。只要肯搏肯做，香港永遠係好地方！',
+            demoWritten: '寄語年輕一代在獅子山下互助守望、自強不息，創造更美好的未來。'
+          },
+          {
+            id: 'c6_health',
+            icon: '🌿',
+            photoUrl: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80',
+            title: '身體健康與笑口常開',
+            desc: '晚年最緊要作息定時、心境開朗',
+            demoCantonese: '老友記最緊要係身體健康、笑口常開。每日去行下公園、飲啖茶，心情好病痛自然少。',
+            demoWritten: '晚年最重要是保持身心健康與開朗心情，笑口常開乃長壽之道。'
+          },
+          {
+            id: 'c6_friends',
+            icon: '🤝',
+            photoUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80',
+            title: '珍惜老朋友與街坊情誼',
+            desc: '一世人能夠有幾位知心好友，互相扶持好珍貴',
+            demoCantonese: '一世人最難得係有一班生死之交。得閒一齊飲茶聚舊、互相問候，真係人生一大樂事。',
+            demoWritten: '感恩一生中結識了許多知心好友與街坊，互相扶持的歲月無比珍貴。'
+          },
+          {
+            id: 'c6_legacy',
+            icon: '📜',
+            photoUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80',
+            title: '留下這本自傳作傳家之寶',
+            desc: '將自己嘅威水史同人生故事永遠流傳俾子孫',
+            demoCantonese: '好開心今日有呢個自傳幫我記錄低一生。希望我嘅子孫睇到呢本書，知到上一代係點樣過嚟嘅。',
+            demoWritten: '欣慰能透過這本自傳記錄一生足跡，作為留給子孫的珍貴傳家之寶。'
+          },
+          {
+            id: 'c6_harmony',
+            icon: '🍲',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLoWoLrZUzCdKgS1OjxmComj0lBydbp5n7N66Bbns6zQ&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '家和萬事興與珍惜眼前人',
+            desc: '千金難買一家人齊齊整整食頓團圓飯',
+            demoCantonese: '俗語話「家和萬事興」，兩公婆同屋企人相處最緊要互相體諒包容。一家人齊齊整整食飯就係最大幸福。',
+            demoWritten: '常言道家和萬事興，家人相處貴在互諒互讓，一家人齊整團聚便是最珍貴的幸福。'
+          },
+          {
+            id: 'c6_thrift',
+            icon: '🌾',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_g5FSfCNRMF-jk_NbR3Vu_wsNlCFUaX067JsQv2jnNA&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '克勤克儉與飲水思源',
+            desc: '走過物資匱乏年代，教導後代珍惜食物同感恩長輩付出',
+            demoCantonese: '我哋呢代人捱過窮、擔過水，知道一粥一飯得來不易。希望孫仔孫女要識得惜福、克勤克儉同飲水思源。',
+            demoWritten: '我們這一代歷經艱辛，深知一粥一飯來之不易，寄望後代懂得惜福、克勤克儉與飲水思源。'
+          },
+          {
+            id: 'c6_learning',
+            icon: '📱',
+            photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDygEkUGJliewomsMpwBl-7lhzq_5_ASuRONGD3mtGog&s=10?auto=format&fit=crop&w=600&q=80',
+            title: '活到老學到老與時代並進',
+            desc: '學用智能手機同屋企人視像、傳相片，保持好奇心',
+            demoCantonese: '雖然年紀大咗，但我都鍾意活到老學到老！依家識得用智能手機同仔孫發訊息、睇相，日日都過得好充實。',
+            demoWritten: '秉持活到老學到老的精神，學習使用智能手機與兒孫聯繫分享生活，讓晚年多姿多彩。'
+          }
+        ]
+      }
+    ];
+
+    let state = {
+      currentScreen: 'onboarding',
+      name: '陳伯（陳志強）',
+      birthYear: 1948,
+      age: 78,
+      district: '深水埗／石硤尾',
+      customDistrict: '',
+      currentChapterIndex: 0,
+      fontXlarge: false,
+      autoTTS: true,
+      selectedVoiceId: 'f_sau_lan',
+      globalBookStyle: 'cantonese',
+      profilePhoto: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=700&q=80',
+      familyWallPhoto: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1000&q=80',
+      chaptersData: {},
+      familyMessages: [
+        { author: '大女 詠心', relation: '大女', text: '阿爸，見到呢本自傳好感動！您以前帶我哋去荔園嘅情景我仲好記得，多謝您一世人咁辛苦照顧呢頭家！' },
+        { author: '孫仔 浩然', relation: '孫仔', text: '阿爺好嘢！原來您以前細個要落街喉擔水。祝阿爺身體健康，日日去飲茶開心！' }
+      ]
+    };
+
+    CHAPTER_DEFINITIONS.forEach((ch, idx) => {
+      state.chaptersData[idx] = {
+        selectedCardId: ch.cards[0].id,
+        rawInput: ch.cards[0].demoCantonese,
+        audioBlobUrl: null,
+        audioBlob: null,
+        audioDurationStr: '00:15',
+        polishedCantonese: ch.cards[0].demoCantonese,
+        polishedWritten: ch.cards[0].demoWritten,
+        activeStyle: 'cantonese',
+        starred: idx === 0 || idx === 2,
+        aiFollowUpText: '',
+        customPhotoUrl: null,
+        dailyRoutine: { morning: ['茶樓飲早茶一盅兩件'], afternoon: ['煲老火湯煮拿手菜'], evening: ['全家齊人開飯食住家菜'] },
+        signatureDish: '青紅蘿蔔煲豬骨湯＋鹹魚蒸肉餅',
+        favouriteRestaurant: '屋企樓下熟絡舊茶居（同街坊茶友一盅兩件）'
+      };
+    });
+
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let isRecording = false;
+    let recordingTimerInterval = null;
+    let recordingSeconds = 0;
+    let micStream = null;
+    let speechRecognitionInstance = null;
+    let speechLang = 'zh-HK';
+    let finalTranscriptBuffer = '';
+    let latestInterimTranscript = '';
+
+    window.onload = function() {
+      initBirthYearSelect();
+      initDistricts();
+      renderVoiceSelectors();
+      renderTopStepper();
+      updateOnboardingDisplay();
+    };
+
+    function initBirthYearSelect() {
+      const select = document.getElementById('select-birth-year');
+      if (!select) return;
+      select.innerHTML = '';
+      const currentYr = new Date().getFullYear();
+      for (let yr = 1925; yr <= 1975; yr++) {
+        const age = currentYr - yr;
+        const opt = document.createElement('option');
+        opt.value = yr;
+        opt.textContent = `${yr}年（今年約 ${age} 歲）`;
+        if (yr === state.birthYear) opt.selected = true;
+        select.appendChild(opt);
+      }
+    }
+
+    function initDistricts() {
+      const grid = document.getElementById('district-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+      HK_DISTRICTS.forEach(d => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        const isSelected = state.district === d.id;
+        btn.className = `p-3.5 rounded-xl border-2 text-left transition flex flex-col justify-between senior-btn ${
+          isSelected ? 'border-stampRed bg-stampRed text-white shadow-md' : 'border-ink bg-paper hover:bg-paperDark text-ink'
+        }`;
+        btn.onclick = () => selectDistrict(d.id);
+        btn.innerHTML = `
+          <span class="font-serif font-black text-base sm:text-lg">${d.label}</span>
+          <span class="text-xs mt-1 ${isSelected ? 'text-white/90' : 'text-inkMuted'}">${d.desc}</span>
+        `;
+        grid.appendChild(btn);
+      });
+    }
+
+    function selectDecade(decadeStart, sampleYear) {
+      state.birthYear = sampleYear;
+      const currentYr = new Date().getFullYear();
+      state.age = currentYr - sampleYear;
+      document.getElementById('select-birth-year').value = sampleYear;
+      document.getElementById('input-direct-age').value = state.age;
+
+      document.querySelectorAll('.decade-btn').forEach(b => {
+        const dec = b.getAttribute('data-decade');
+        if (dec == String(decadeStart)) {
+          b.className = "decade-btn senior-btn p-4 rounded-xl border-2 border-stampRed bg-stampRed text-white text-left transition flex flex-col justify-between shadow-md";
+        } else {
+          b.className = "decade-btn senior-btn p-4 rounded-xl border-2 border-ink bg-paper hover:bg-paperDark text-left transition flex flex-col justify-between";
+        }
+      });
+      updateOnboardingDisplay();
+    }
+
+    function onBirthYearSelectChanged(yrStr) {
+      const yr = parseInt(yrStr);
+      state.birthYear = yr;
+      state.age = new Date().getFullYear() - yr;
+      document.getElementById('input-direct-age').value = state.age;
+      updateOnboardingDisplay();
+    }
+
+    function onDirectAgeChanged(val) {
+      const a = parseInt(val);
+      if (isNaN(a) || a < 50 || a > 105) return;
+      state.age = a;
+      state.birthYear = new Date().getFullYear() - a;
+      const sel = document.getElementById('select-birth-year');
+      if (sel) sel.value = state.birthYear;
+      updateOnboardingDisplay();
+    }
+
+    function adjustAge(delta) {
+      let a = state.age + delta;
+      if (a < 50) a = 50;
+      if (a > 105) a = 105;
+      state.age = a;
+      state.birthYear = new Date().getFullYear() - a;
+      document.getElementById('input-direct-age').value = a;
+      const sel = document.getElementById('select-birth-year');
+      if (sel) sel.value = state.birthYear;
+      updateOnboardingDisplay();
+    }
+
+    function selectDistrict(distId) {
+      state.district = distId;
+      state.customDistrict = '';
+      const customInput = document.getElementById('input-custom-district');
+      if (customInput) customInput.value = '';
+      initDistricts();
+      updateOnboardingDisplay();
+    }
+
+    function updateCustomDistrict(val) {
+      state.customDistrict = val;
+      if (val.trim()) {
+        state.district = val.trim();
+      }
+      updateOnboardingDisplay();
+    }
+
+    function setQuickName(nameStr) {
+      state.name = nameStr;
+      const input = document.getElementById('input-name');
+      if (input) input.value = nameStr;
+      updateOnboardingDisplay();
+    }
+
+    function updateOnboardingData() {
+      const input = document.getElementById('input-name');
+      if (input) state.name = input.value || '老友記';
+      updateOnboardingDisplay();
+    }
+
+    function updateOnboardingDisplay() {
+      document.getElementById('cert-serial').textContent = state.birthYear;
+      const distStr = state.customDistrict || state.district;
+      document.getElementById('cert-summary-line').textContent = `主角：${state.name}｜${state.birthYear}年出生（${state.age}歲）｜成長於 ${distStr}`;
+      
+      const eraPill = document.getElementById('era-preview-pill');
+      if (eraPill) {
+        const childEvents = getEventsInYearRange(state.birthYear, state.birthYear + 12);
+        const youthEvents = getEventsInYearRange(state.birthYear + 13, state.birthYear + 25);
+        const cTitle = childEvents[0] ? `${childEvents[0].year}年${childEvents[0].vocab}` : `${state.birthYear + 5}年代童年歲月`;
+        const yTitle = youthEvents[0] ? `${youthEvents[0].year}年${youthEvents[0].vocab}` : `${state.birthYear + 18}年青春拼搏`;
+        eraPill.innerHTML = `✨ 自動對齊你嘅歷史時間軸：童年經歷【${cTitle}】、青年經歷【${yTitle}】`;
+      }
+    }
+
+    function renderTopStepper() {
+      const container = document.getElementById('chapter-stepper-container');
+      if (!container) return;
+      container.innerHTML = '';
+      CHAPTER_DEFINITIONS.forEach((ch, idx) => {
+        const isCurrent = state.currentScreen === 'chapter' && state.currentChapterIndex === idx;
+        const hasData = state.chaptersData[idx] && state.chaptersData[idx].rawInput.trim().length > 0;
+        const isStarred = state.chaptersData[idx] && state.chaptersData[idx].starred;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.onclick = () => goToChapter(idx);
+        btn.className = `px-2.5 py-1.5 rounded-lg text-xs sm:text-sm font-bold whitespace-nowrap transition flex items-center gap-1 ${
+          isCurrent ? 'bg-stampRed text-white shadow-sm' : hasData ? 'bg-jadeLight text-jadeDark border border-jade/40' : 'bg-paperCard text-ink hover:bg-paperDark border border-borderWarm'
+        }`;
+        btn.innerHTML = `<span>${isStarred ? '⭐' : ''}</span> <span>${ch.shortTitle}</span>`;
+        container.appendChild(btn);
+      });
+    }
+
+    function goToScreen(screenName) {
+      state.currentScreen = screenName;
+      document.getElementById('screen-onboarding').classList.add('hidden');
+      document.getElementById('screen-chapter').classList.add('hidden');
+      document.getElementById('screen-book').classList.add('hidden');
+
+      if (screenName === 'onboarding') {
+        document.getElementById('screen-onboarding').classList.remove('hidden');
+      } else if (screenName === 'chapter') {
+        document.getElementById('screen-chapter').classList.remove('hidden');
+        renderChapterScreen();
+      } else if (screenName === 'book') {
+        document.getElementById('screen-book').classList.remove('hidden');
+        renderBookScreen();
+      }
+      renderTopStepper();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function startStoryJourney() {
+      goToChapter(0);
+    }
+
+    function goToChapter(chapterIdx) {
+      if (chapterIdx < 0 || chapterIdx >= CHAPTER_DEFINITIONS.length) return;
+      stopVoiceRecordingIfActive();
+      state.currentChapterIndex = chapterIdx;
+      state.currentScreen = 'chapter';
+      document.getElementById('screen-onboarding').classList.add('hidden');
+      document.getElementById('screen-book').classList.add('hidden');
+      document.getElementById('screen-chapter').classList.remove('hidden');
+      renderChapterScreen();
+      renderTopStepper();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function prevChapter() {
+      if (state.currentChapterIndex > 0) {
+        goToChapter(state.currentChapterIndex - 1);
+      } else {
+        goToScreen('onboarding');
+      }
+    }
+
+    function nextChapter() {
+      if (state.currentChapterIndex < CHAPTER_DEFINITIONS.length - 1) {
+        goToChapter(state.currentChapterIndex + 1);
+      } else {
+        goToScreen('book');
+      }
+    }
+
+    function skipCurrentChapter() {
+      showToast('已跳過本章，進入下一章');
+      nextChapter();
+    }
+
+    function renderChapterScreen() {
+      const ch = CHAPTER_DEFINITIONS[state.currentChapterIndex];
+      const chData = state.chaptersData[state.currentChapterIndex];
+
+      document.getElementById('chapter-badge').textContent = `第 ${state.currentChapterIndex + 1} 章（共 ${CHAPTER_DEFINITIONS.length} 章）`;
+      const startYr = state.birthYear + ch.ageRange[0];
+      const endYr = state.birthYear + ch.ageRange[1];
+      document.getElementById('chapter-era-years').textContent = `📅 ${startYr}年 – ${endYr}年（${ch.ageRange[0]}–${ch.ageRange[1]}歲）`;
+      document.getElementById('chapter-title').textContent = ch.title;
+      document.getElementById('chapter-era-context').textContent = ch.getEraContext(state.birthYear, state.district);
+      document.getElementById('chapter-main-question').textContent = ch.question;
+
+      const photoImg = document.getElementById('chapter-featured-photo');
+      const activePhoto = chData.customPhotoUrl || ch.defaultPhotoUrl;
+      photoImg.src = activePhoto;
+      document.getElementById('chapter-photo-title').textContent = ch.photoTitle;
+      document.getElementById('chapter-photo-caption').textContent = ch.photoCaption;
+      document.getElementById('btn-reset-chapter-photo').classList.toggle('hidden', !chData.customPhotoUrl);
+
+      const dailyPanel = document.getElementById('daily-routine-panel');
+      if (state.currentChapterIndex === 4) {
+        dailyPanel.classList.remove('hidden');
+        renderDailyRoutineCheckboxes();
+        document.getElementById('input-signature-dish').value = chData.signatureDish || '';
+        document.getElementById('input-favourite-restaurant').value = chData.favouriteRestaurant || '';
+      } else {
+        dailyPanel.classList.add('hidden');
+      }
+
+      const matchedPill = document.getElementById('chapter-matched-events-pill');
+      if (matchedPill) {
+        const matchedEvs = getEventsInYearRange(startYr, endYr);
+        matchedPill.textContent = `📅 已對齊 ${startYr}–${endYr}年香港大事：${matchedEvs.map(e => e.vocab).slice(0, 2).join('、')}`;
+      }
+
+      const cardsGrid = document.getElementById('memory-cards-grid');
+      cardsGrid.innerHTML = '';
+      ch.cards.forEach(card => {
+        const isSelected = chData.selectedCardId === card.id;
+        const cardTitle = typeof card.title === 'function' ? card.title(state.birthYear) : card.title;
+        const cardDesc = typeof card.desc === 'function' ? card.desc(state.birthYear) : card.desc;
+        const cardPhoto = typeof card.photoUrl === 'function' ? card.photoUrl(state.birthYear) : card.photoUrl;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `p-3 rounded-2xl border-2 text-left transition flex flex-col justify-between senior-btn ${
+          isSelected ? 'border-stampRed bg-goldLight shadow-md ring-2 ring-stampRed/40' : 'border-ink bg-paperCard hover:bg-paperDark'
+        }`;
+        btn.onclick = () => selectMemoryCard(card.id);
+        btn.innerHTML = `
+          <div class="relative w-full h-28 rounded-xl overflow-hidden mb-2 border border-ink bg-paperDark">
+            <img src="${cardPhoto}" alt="${cardTitle}" onerror="this.onerror=null;this.src='${ch.defaultPhotoUrl}';" class="w-full h-full object-cover vintage-photo-filter" />
+          </div>
+          <div class="space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="font-serif font-black text-sm sm:text-base text-ink">${card.icon} ${cardTitle}</span>
+              <span class="text-[11px] font-bold px-1.5 py-0.5 rounded ${isSelected ? 'bg-stampRed text-white' : 'bg-paperDark text-inkMuted'}">${isSelected ? '✓ 已選' : '點選'}</span>
+            </div>
+            <p class="text-xs text-inkMuted leading-snug">${cardDesc}</p>
+          </div>
+        `;
+        cardsGrid.appendChild(btn);
+      });
+
+      const selectedCardObj = ch.cards.find(c => c.id === chData.selectedCardId);
+      if (selectedCardObj && !chData.customPhotoUrl) {
+        const resolvedSelectedPhoto = typeof selectedCardObj.photoUrl === 'function' ? selectedCardObj.photoUrl(state.birthYear) : selectedCardObj.photoUrl;
+        const resolvedSelectedTitle = typeof selectedCardObj.title === 'function' ? selectedCardObj.title(state.birthYear) : selectedCardObj.title;
+        const resolvedSelectedDesc = typeof selectedCardObj.desc === 'function' ? selectedCardObj.desc(state.birthYear) : selectedCardObj.desc;
+        photoImg.src = resolvedSelectedPhoto;
+        photoImg.onerror = function() {
+          this.onerror = null;
+          this.src = ch.defaultPhotoUrl;
+        };
+        document.getElementById('chapter-photo-title').textContent = `📸 ${resolvedSelectedTitle}`;
+        document.getElementById('chapter-photo-caption').textContent = resolvedSelectedDesc;
+      }
+
+      const chipsContainer = document.getElementById('era-vocab-chips');
+      chipsContainer.innerHTML = '';
+      const dynamicVocabList = getDynamicVocabForRange(state.birthYear, ch.ageRange, ch.vocabChips);
+      dynamicVocabList.forEach(vocab => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'px-3 py-1.5 rounded-lg bg-paperDark hover:bg-amber-200 text-ink text-xs sm:text-sm font-bold border border-borderWarm transition';
+        chip.onclick = () => appendVocabToInput(vocab);
+        chip.textContent = `＋ ${vocab}`;
+        chipsContainer.appendChild(chip);
+      });
+
+      document.getElementById('chapter-raw-input').value = chData.rawInput || '';
+
+      const starIcon = document.getElementById('star-icon');
+      const starLabel = document.getElementById('star-label');
+      if (chData.starred) {
+        starIcon.textContent = '⭐';
+        starLabel.textContent = '已標記為重要記憶';
+      } else {
+        starIcon.textContent = '☆';
+        starLabel.textContent = '標記為重要記憶';
+      }
+
+      document.getElementById('ai-followup-box').classList.add('hidden');
+      document.getElementById('ai-polished-box').classList.add('hidden');
+      if (chData.polishedCantonese || chData.polishedWritten) {
+        document.getElementById('ai-polished-box').classList.remove('hidden');
+        renderPolishedContentBox();
+      }
+
+      if (state.autoTTS) {
+        setTimeout(() => readCurrentChapterPrompt(), 400);
+      }
+    }
+
+    function selectMemoryCard(cardId) {
+      const ch = CHAPTER_DEFINITIONS[state.currentChapterIndex];
+      const chData = state.chaptersData[state.currentChapterIndex];
+      chData.selectedCardId = cardId;
+      const cardObj = ch.cards.find(c => c.id === cardId);
+      const resolvedTitle = cardObj ? (typeof cardObj.title === 'function' ? cardObj.title(state.birthYear) : cardObj.title) : '';
+      if (cardObj) {
+        chData.rawInput = cardObj.demoCantonese;
+        chData.polishedCantonese = cardObj.demoCantonese;
+        chData.polishedWritten = cardObj.demoWritten;
+        document.getElementById('chapter-raw-input').value = chData.rawInput;
+        renderPolishedContentBox();
+        document.getElementById('ai-polished-box').classList.remove('hidden');
+      }
+      renderChapterScreen();
+      showToast(`已選取記憶卡：${resolvedTitle}`);
+    }
+
+    function appendVocabToInput(vocab) {
+      const textarea = document.getElementById('chapter-raw-input');
+      const cur = textarea.value;
+      const addStr = cur.endsWith('。') || cur === '' ? vocab : `，${vocab}`;
+      textarea.value = cur + addStr;
+      onRawInputChanged(textarea.value);
+    }
+
+    function onRawInputChanged(val) {
+      const chData = state.chaptersData[state.currentChapterIndex];
+      chData.rawInput = val;
+      chData.polishedCantonese = val;
+      chData.polishedWritten = val;
+      renderTopStepper();
+    }
+
+    function clearCurrentChapterText() {
+      const chData = state.chaptersData[state.currentChapterIndex];
+      chData.rawInput = '';
+      chData.polishedCantonese = '';
+      chData.polishedWritten = '';
+      document.getElementById('chapter-raw-input').value = '';
+      document.getElementById('ai-polished-box').classList.add('hidden');
+      showToast('已清空本章內容');
+    }
+
+    function toggleStarCurrentChapter() {
+      const chData = state.chaptersData[state.currentChapterIndex];
+      chData.starred = !chData.starred;
+      renderChapterScreen();
+      renderTopStepper();
+      showToast(chData.starred ? '⭐ 已標記為重要記憶' : '已取消重要記憶標記');
+    }
+
+    function renderDailyRoutineCheckboxes() {
+      const chData = state.chaptersData[4];
+      if (!chData || !chData.dailyRoutine) return;
+
+      ['morning', 'afternoon', 'evening'].forEach(part => {
+        const container = document.getElementById(`routine-tags-${part}`);
+        if (!container) return;
+        container.innerHTML = '';
+        DAILY_ROUTINE_OPTIONS[part].forEach(opt => {
+          const isChecked = chData.dailyRoutine[part].includes(opt);
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = `px-2.5 py-1.5 rounded-lg text-xs font-bold transition border ${
+            isChecked ? 'bg-stampRed text-white border-stampRed shadow-sm' : 'bg-paperCard text-ink border-borderWarm hover:bg-paperDark'
+          }`;
+          btn.onclick = () => toggleRoutineItem(part, opt);
+          btn.textContent = `${isChecked ? '✓ ' : '＋ '}${opt}`;
+          container.appendChild(btn);
+        });
+      });
+    }
+
+    function toggleRoutineItem(part, opt) {
+      const chData = state.chaptersData[4];
+      const list = chData.dailyRoutine[part];
+      const idx = list.indexOf(opt);
+      if (idx >= 0) {
+        list.splice(idx, 1);
+      } else {
+        list.push(opt);
+      }
+      renderDailyRoutineCheckboxes();
+      showToast('已更新一日作息習慣');
+    }
+
+    function updateSignatureDish(val) {
+      state.chaptersData[4].signatureDish = val;
+    }
+
+    function setSignatureDish(val) {
+      state.chaptersData[4].signatureDish = val;
+      document.getElementById('input-signature-dish').value = val;
+      showToast('已設定招牌住家菜');
+    }
+
+    function updateFavouriteRestaurant(val) {
+      state.chaptersData[4].favouriteRestaurant = val;
+    }
+
+    function setFavouriteRestaurant(val) {
+      state.chaptersData[4].favouriteRestaurant = val;
+      document.getElementById('input-favourite-restaurant').value = val;
+      showToast('已設定常去茶樓／餐廳');
+    }
+
+    function onSpeechLangChange(langVal) {
+      speechLang = langVal;
+      showToast(`已切換語言：${langVal}`);
+      if (isRecording && speechRecognitionInstance) {
+        try { speechRecognitionInstance.stop(); } catch (e) {}
+      }
+    }
+
+    function toggleVoiceRecording() {
+      if (isRecording) {
+        stopVoiceRecording();
+      } else {
+        startVoiceRecording();
+      }
+    }
+
+    function startVoiceRecording() {
+      stopAutoTTS();
+      finalTranscriptBuffer = '';
+      latestInterimTranscript = '';
+
+      const ch = CHAPTER_DEFINITIONS[state.currentChapterIndex];
+      const chData = state.chaptersData[state.currentChapterIndex];
+      const textarea = document.getElementById('chapter-raw-input');
+
+      const isDefaultDemo = ch.cards.some(c => c.demoCantonese.trim() === textarea.value.trim());
+      if (isDefaultDemo) {
+        textarea.value = '';
+        chData.rawInput = '';
+      }
+      finalTranscriptBuffer = textarea.value.trim() ? textarea.value.trim() + '，' : '';
+
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+      isRecording = true;
+      recordingSeconds = 0;
+
+      if (SpeechRecognition) {
+        try {
+          speechRecognitionInstance = new SpeechRecognition();
+          const selectedLang = document.getElementById('speech-lang-select')?.value || speechLang || 'zh-HK';
+          speechRecognitionInstance.lang = selectedLang;
+          speechRecognitionInstance.continuous = true;
+          speechRecognitionInstance.interimResults = true;
+          speechRecognitionInstance.maxAlternatives = 1;
+
+          speechRecognitionInstance.onstart = () => {
+            document.getElementById('stt-engine-badge').textContent = `🟢 正在聽取廣東話 (${selectedLang})...`;
+          };
+
+          speechRecognitionInstance.onresult = (event) => {
+            let interim = '';
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+              const phrase = event.results[i][0].transcript;
+              if (event.results[i].isFinal) {
+                const cleaned = phrase.trim();
+                if (cleaned) {
+                  const needsComma = finalTranscriptBuffer.length > 0 && !/[，。！？、,.!?]$/.test(finalTranscriptBuffer);
+                  finalTranscriptBuffer += (needsComma ? '，' : '') + cleaned;
+                }
+              } else {
+                interim += phrase;
+              }
+            }
+            latestInterimTranscript = interim;
+            const combinedText = (finalTranscriptBuffer + interim).trim();
+            if (combinedText) {
+              textarea.value = combinedText;
+              onRawInputChanged(combinedText);
+            }
+          };
+
+          speechRecognitionInstance.onerror = (e) => {
+            console.debug('Speech error:', e.error);
+          };
+
+          speechRecognitionInstance.onend = () => {
+            if (isRecording) {
+              try { speechRecognitionInstance.start(); } catch (e) {}
+            }
+          };
+
+          speechRecognitionInstance.start();
+        } catch (e) {
+          console.debug('Speech init error:', e);
+        }
+      } else {
+        document.getElementById('stt-engine-badge').textContent = '⚠️ 請使用 Chrome / Edge / Safari 瀏覽器支援語音轉字';
+      }
+
+      document.getElementById('recording-status-bar').classList.remove('hidden');
+      document.getElementById('btn-voice-record').className = "flex-1 senior-btn py-5 px-6 rounded-2xl bg-stampRedDark text-white font-serif font-black text-xl sm:text-2xl border-2 border-ink shadow-lg flex items-center justify-center gap-3.5 transition";
+      document.getElementById('record-btn-icon').textContent = '⏹️';
+      document.getElementById('record-btn-text').textContent = '錄音中... 講完請再撳呢度停';
+
+      clearInterval(recordingTimerInterval);
+      document.getElementById('recording-timer').textContent = '00:00';
+      recordingTimerInterval = setInterval(() => {
+        recordingSeconds++;
+        const mins = String(Math.floor(recordingSeconds / 60)).padStart(2, '0');
+        const secs = String(recordingSeconds % 60).padStart(2, '0');
+        document.getElementById('recording-timer').textContent = `${mins}:${secs}`;
+      }, 1000);
+
+      showToast('已啟動廣東話語音識別...');
+    }
+
+    function stopVoiceRecording() {
+      if (!isRecording) return;
+      isRecording = false;
+
+      clearInterval(recordingTimerInterval);
+
+      if (speechRecognitionInstance) {
+        try {
+          speechRecognitionInstance.onend = null;
+          speechRecognitionInstance.stop();
+        } catch (e) {}
+        speechRecognitionInstance = null;
+      }
+
+      document.getElementById('recording-status-bar').classList.add('hidden');
+      document.getElementById('btn-voice-record').className = "flex-1 senior-btn py-5 px-6 rounded-2xl bg-stampRed hover:bg-stampRedDark text-white font-serif font-black text-xl sm:text-2xl border-2 border-ink shadow-md flex items-center justify-center gap-3.5 transition";
+      document.getElementById('record-btn-icon').textContent = '🎤';
+      document.getElementById('record-btn-text').textContent = '撳一下開始講故仔（廣東話語音轉字）';
+      showToast('已停止錄音並儲存記錄');
+    }
+
+    function stopVoiceRecordingIfActive() {
+      if (isRecording) stopVoiceRecording();
+    }
+
+    function simulateCantoneseVoiceInput() {
+      stopAutoTTS();
+      const ch = CHAPTER_DEFINITIONS[state.currentChapterIndex];
+      const chData = state.chaptersData[state.currentChapterIndex];
+      const cardObj = ch.cards.find(c => c.id === chData.selectedCardId) || ch.cards[0];
+      
+      const textarea = document.getElementById('chapter-raw-input');
+      textarea.value = cardObj.demoCantonese;
+      onRawInputChanged(cardObj.demoCantonese);
+      showToast('已模擬長者廣東話口述錄音！');
+    }
+
+    function triggerAIFollowUp() {
+      stopAutoTTS();
+      const chData = state.chaptersData[state.currentChapterIndex];
+      let questions = [
+        `聽完你講嘅往事好感動！想問下 ${state.name}，當日身邊有冇邊個好朋友、街坊或者屋企人幫過你最大忙？`,
+        `呢個回憶真係充滿香港人嘅人情味！當時環境咁刻苦，你係點樣保持正面心態去面對㗎？`,
+        `如果可以坐時光機返去嗰一日，你最想同當年咁努力嘅自己講句咩說話呢？`
+      ];
+
+      if (state.currentChapterIndex === 4) {
+        const dish = chData.signatureDish || '住家靚湯同拿手小菜';
+        const rest = chData.favouriteRestaurant || '熟絡茶居';
+        questions = [
+          `聽到都流口水呀！想問下 ${state.name}，你煮「${dish}」有冇咩獨門秘訣？屋企邊個最鍾意食？`,
+          `去「${rest}」飲茶食嘢真係好寫意！你平時去開最鍾意坐邊個位、同邊位茶友或屋企人一齊去傾偈？`
+        ];
+      }
+
+      const picked = questions[Math.floor(Math.random() * questions.length)];
+      chData.aiFollowUpText = picked;
+      document.getElementById('ai-followup-text').textContent = picked;
+      document.getElementById('ai-followup-box').classList.remove('hidden');
+      speakText(picked);
+    }
+
+    function speakAIFollowUp() {
+      const chData = state.chaptersData[state.currentChapterIndex];
+      if (chData.aiFollowUpText) speakText(chData.aiFollowUpText);
+    }
+
+    function triggerAIPolish() {
+      stopAutoTTS();
+      const ch = CHAPTER_DEFINITIONS[state.currentChapterIndex];
+      const chData = state.chaptersData[state.currentChapterIndex];
+      const raw = (document.getElementById('chapter-raw-input').value || '').trim();
+      const cardObj = ch.cards.find(c => c.id === chData.selectedCardId) || ch.cards[0];
+
+      if (!raw) {
+        chData.rawInput = cardObj.demoCantonese;
+        document.getElementById('chapter-raw-input').value = chData.rawInput;
+      }
+
+      const baseText = chData.rawInput.trim();
+      chData.polishedCantonese = baseText;
+      if (baseText === cardObj.demoCantonese) {
+        chData.polishedWritten = cardObj.demoWritten;
+      } else {
+        chData.polishedWritten = baseText
+          .replace(/嗰陣/g, '那時候')
+          .replace(/喺/g, '在')
+          .replace(/係/g, '是')
+          .replace(/嘅/g, '的')
+          .replace(/唔/g, '不')
+          .replace(/冇/g, '沒有')
+          .replace(/咁/g, '如此')
+          .replace(/俾/g, '給')
+          .replace(/屋企人/g, '家人')
+          .replace(/細個/g, '童年時')
+          .replace(/後生/g, '年輕時');
+      }
+
+      renderPolishedContentBox();
+      document.getElementById('ai-polished-box').classList.remove('hidden');
+      showToast('✨ 已為你整理成自傳段落！');
+    }
+
+    function switchPolishedStyle(style) {
+      const chData = state.chaptersData[state.currentChapterIndex];
+      chData.activeStyle = style;
+      renderPolishedContentBox();
+    }
+
+    function renderPolishedContentBox() {
+      const chData = state.chaptersData[state.currentChapterIndex];
+      const btnCantonese = document.getElementById('tab-style-cantonese');
+      const btnWritten = document.getElementById('tab-style-written');
+      const contentEl = document.getElementById('ai-polished-content');
+
+      if (chData.activeStyle === 'written') {
+        btnWritten.className = "px-3 py-1.5 rounded-lg font-bold text-xs sm:text-sm transition bg-jade text-white";
+        btnCantonese.className = "px-3 py-1.5 rounded-lg font-bold text-xs sm:text-sm transition text-ink hover:bg-paperDark";
+        contentEl.textContent = chData.polishedWritten || chData.rawInput;
+      } else {
+        btnCantonese.className = "px-3 py-1.5 rounded-lg font-bold text-xs sm:text-sm transition bg-jade text-white";
+        btnWritten.className = "px-3 py-1.5 rounded-lg font-bold text-xs sm:text-sm transition text-ink hover:bg-paperDark";
+        contentEl.textContent = chData.polishedCantonese || chData.rawInput;
+      }
+    }
+
+    function speakPolishedText() {
+      const chData = state.chaptersData[state.currentChapterIndex];
+      const text = chData.activeStyle === 'written' ? chData.polishedWritten : chData.polishedCantonese;
+      speakText(text || chData.rawInput);
+    }
+
+    function readCurrentChapterPrompt() {
+      const ch = CHAPTER_DEFINITIONS[state.currentChapterIndex];
+      if (ch) speakText(`${ch.title}。${ch.question}`);
+    }
+
+    function renderVoiceSelectors() {
+      const activeProfile = getActiveVoiceProfile();
+      const headerAvatar = document.getElementById('header-voice-avatar');
+      const headerName = document.getElementById('header-voice-name');
+      if (headerAvatar) headerAvatar.textContent = activeProfile.avatar;
+      if (headerName) headerName.textContent = `聲線：${activeProfile.name}`;
+
+      const bookIcon = document.getElementById('book-voice-btn-icon');
+      const bookLabel = document.getElementById('book-voice-btn-label');
+      if (bookIcon) bookIcon.textContent = activeProfile.avatar;
+      if (bookLabel) bookLabel.textContent = `朗讀聲線：${activeProfile.name}`;
+
+      const buildGridHtml = () => {
+        const femaleVoices = CANTONESE_VOICE_PROFILES.filter(v => v.gender === 'female');
+        const maleVoices = CANTONESE_VOICE_PROFILES.filter(v => v.gender === 'male');
+
+        const renderColumn = (title, badgeColor, list) => `
+          <div class="bg-paper p-4 rounded-2xl border-2 border-borderWarm space-y-3">
+            <div class="flex items-center justify-between border-b border-borderWarm pb-2">
+              <span class="font-serif font-black text-base sm:text-lg ${badgeColor}">${title}</span>
+              <span class="text-xs text-inkMuted font-bold">撳卡片試聽</span>
+            </div>
+            <div class="space-y-2.5">
+              ${list.map(v => {
+                const isSelected = v.id === state.selectedVoiceId;
+                return `
+                  <button
+                    type="button"
+                    onclick="selectVoicePersona('${v.id}', true)"
+                    class="w-full p-3.5 rounded-xl border-2 text-left transition flex items-start gap-3 ${
+                      isSelected
+                        ? 'border-stampRed bg-goldLight shadow-sm ring-2 ring-stampRed/30'
+                        : 'border-ink bg-paperCard hover:bg-paperDark'
+                    }">
+                    <span class="text-2xl sm:text-3xl shrink-0">${v.avatar}</span>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center justify-between gap-1">
+                        <span class="font-serif font-black text-base sm:text-lg text-ink">${v.name}</span>
+                        <span class="text-xs font-bold px-2 py-0.5 rounded ${
+                          isSelected ? 'bg-stampRed text-white' : 'bg-paperDark text-inkMuted'
+                        }">${isSelected ? '✓ 已選' : '試聽'}</span>
+                      </div>
+                      <div class="text-xs font-bold text-stampRed mt-0.5">${v.tag}</div>
+                      <p class="text-xs text-inkMuted mt-1 leading-relaxed">${v.desc}</p>
+                    </div>
+                  </button>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+
+        return (
+          renderColumn('👩 廣東話女聲（3 款）', 'text-stampRed', femaleVoices) +
+          renderColumn('👨 廣東話穩重男聲（3 款）', 'text-jadeDark', maleVoices)
+        );
+      };
+
+      const onboardingGrid = document.getElementById('onboarding-voice-grid');
+      if (onboardingGrid) onboardingGrid.innerHTML = buildGridHtml();
+
+      const modalGrid = document.getElementById('modal-voice-grid');
+      if (modalGrid) modalGrid.innerHTML = buildGridHtml();
+    }
+
+    function selectVoicePersona(voiceId, shouldPreview = true) {
+      state.selectedVoiceId = voiceId;
+      renderVoiceSelectors();
+      const profile = getActiveVoiceProfile();
+      showToast(`🎙️ 已切換為「${profile.name}（${profile.tag}）」`);
+      if (shouldPreview) speakText(profile.sampleText);
+    }
+
+    function previewSelectedVoice() {
+      const profile = getActiveVoiceProfile();
+      speakText(profile.sampleText);
+    }
+
+    function toggleVoiceModal(show) {
+      const m = document.getElementById('voice-picker-modal');
+      if (!m) return;
+      if (show) {
+        renderVoiceSelectors();
+        m.classList.remove('hidden');
+      } else {
+        m.classList.add('hidden');
+      }
+    }
+
+    function getActiveVoiceProfile() {
+      return CANTONESE_VOICE_PROFILES.find(v => v.id === state.selectedVoiceId) || CANTONESE_VOICE_PROFILES[0];
+    }
+
+    function speakText(text) {
+      if (!text) return;
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+
+      const profile = getActiveVoiceProfile();
+      try {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'zh-HK';
+        utterance.pitch = profile.pitch;
+        utterance.rate = profile.rate;
+
+        const voices = window.speechSynthesis.getVoices() || [];
+        const cantoneseVoices = voices.filter(v => 
+          (v.lang && (v.lang.toLowerCase().includes('zh-hk') || v.lang.toLowerCase().includes('yue'))) ||
+          /cantonese|hong kong|香港|粵語/i.test(v.name)
+        );
+
+        if (cantoneseVoices.length > 0) {
+          if (profile.gender === 'male') {
+            const maleVoice = cantoneseVoices.find(v => /male|man|wanlung|aasing|danny|雲龍/i.test(v.name));
+            utterance.voice = maleVoice || cantoneseVoices[0];
+          } else {
+            const femaleVoice = cantoneseVoices.find(v => /female|woman|sin-ji|sinji|hiumaan|hiugaai|善怡/i.test(v.name));
+            utterance.voice = femaleVoice || cantoneseVoices[0];
+          }
+        }
+
+        window.speechSynthesis.speak(utterance);
+      } catch (e) {
+        console.debug('TTS error:', e);
+      }
+    }
+
+    function stopAutoTTS() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    }
+
+    function toggleAutoTTS() {
+      state.autoTTS = !state.autoTTS;
+      const btn = document.getElementById('btn-tts-toggle');
+      const icon = document.getElementById('tts-icon');
+      const label = document.getElementById('tts-label');
+      if (state.autoTTS) {
+        btn.className = "px-3.5 py-2.5 rounded-xl border-2 border-jade bg-jade text-white hover:bg-jadeDark font-bold text-sm flex items-center gap-1.5 shadow-sm transition";
+        icon.textContent = '🔊';
+        label.textContent = '廣東話讀題：開';
+        showToast('已開啟廣東話自動讀題');
+      } else {
+        btn.className = "px-3.5 py-2.5 rounded-xl border-2 border-ink bg-paperCard hover:bg-paperDark text-ink font-bold text-sm flex items-center gap-1.5 shadow-sm transition";
+        icon.textContent = '🔇';
+        label.textContent = '廣東話讀題：關';
+        stopAutoTTS();
+        showToast('已關閉廣東話自動讀題');
+      }
+    }
+
+    function toggleFontSize() {
+      state.fontXlarge = !state.fontXlarge;
+      const htmlEl = document.documentElement;
+      const lbl = document.getElementById('font-toggle-label');
+      if (state.fontXlarge) {
+        htmlEl.classList.add('font-xlarge');
+        lbl.textContent = '特大字體：開';
+        showToast('已切換為特大長者字體');
+      } else {
+        htmlEl.classList.remove('font-xlarge');
+        lbl.textContent = '特大字體：關';
+        showToast('已切換為標準字體');
+      }
+    }
+
+    function uploadProfilePhoto(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        state.profilePhoto = e.target.result;
+        document.getElementById('onboarding-portrait-img').src = e.target.result;
+        showToast('已成功更新相片！');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function uploadChapterPhoto(event, chapterIdx) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        state.chaptersData[chapterIdx].customPhotoUrl = e.target.result;
+        renderChapterScreen();
+        showToast('已成功上傳本章舊相片！');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function resetChapterPhoto(chapterIdx) {
+      state.chaptersData[chapterIdx].customPhotoUrl = null;
+      renderChapterScreen();
+      showToast('已還原為本章預設香港舊照');
+    }
+
+    function uploadFamilyWallPhoto(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        state.familyWallPhoto = e.target.result;
+        document.getElementById('family-wall-photo').src = e.target.result;
+        showToast('已成功更新全家福！');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function renderBookScreen() {
+      document.getElementById('book-cover-photo').src = state.profilePhoto;
+      document.getElementById('book-cover-title').textContent = `《${state.name}的人生自傳》`;
+      document.getElementById('book-cover-subtitle').textContent = `生於 ${state.birthYear} 年・從 ${state.district} 走過獅子山下的流金歲月`;
+
+      let starredCount = 0;
+      let audioCount = 0;
+      Object.keys(state.chaptersData).forEach(k => {
+        if (state.chaptersData[k].starred) starredCount++;
+        if (state.chaptersData[k].rawInput.trim()) audioCount++;
+      });
+      document.getElementById('stat-stars-count').textContent = `${starredCount} 顆 ⭐`;
+      document.getElementById('stat-audio-count').textContent = `${audioCount} 段 🔊`;
+
+      const dailyCard = document.getElementById('book-daily-life-card');
+      const ch5 = state.chaptersData[4];
+      dailyCard.innerHTML = `
+        <div class="flex items-center justify-between border-b-2 border-gold pb-3">
+          <div>
+            <span class="px-3 py-1 rounded-full bg-stampRed text-white font-bold text-xs">第五章專屬檔案</span>
+            <h3 class="font-serif font-black text-2xl sm:text-3xl text-ink mt-1">🍵 《老友記日常生活檔案》與飲食滋味</h3>
+          </div>
+          <button type="button" onclick="speakDailyLifeArchive()" class="px-3.5 py-2 rounded-xl bg-jade text-white font-bold text-sm flex items-center gap-1 shadow-sm">
+            <span>🔊</span> 朗讀日常檔案
+          </button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-paper p-4 rounded-2xl border-2 border-borderWarm space-y-2">
+            <div class="font-serif font-bold text-stampRed text-base">🌅 朝早習慣</div>
+            <div class="text-sm font-bold text-ink">${(ch5.dailyRoutine.morning || []).join('、') || '無記錄'}</div>
+          </div>
+          <div class="bg-paper p-4 rounded-2xl border-2 border-borderWarm space-y-2">
+            <div class="font-serif font-bold text-gold text-base">☀️ 晏晝時光</div>
+            <div class="text-sm font-bold text-ink">${(ch5.dailyRoutine.afternoon || []).join('、') || '無記錄'}</div>
+          </div>
+          <div class="bg-paper p-4 rounded-2xl border-2 border-borderWarm space-y-2">
+            <div class="font-serif font-bold text-jadeDark text-base">🌙 夜晚生活</div>
+            <div class="text-sm font-bold text-ink">${(ch5.dailyRoutine.evening || []).join('、') || '無記錄'}</div>
+          </div>
+        </div>
+        <div class="bg-goldLight p-4 rounded-2xl border-2 border-gold grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <span class="text-xs font-bold text-gold">🍲 招牌住家菜／老火湯：</span>
+            <div class="font-serif font-bold text-lg text-ink">${ch5.signatureDish || '未填寫'}</div>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-stampRed">🏪 最愛茶樓／餐廳：</span>
+            <div class="font-serif font-bold text-lg text-ink">${ch5.favouriteRestaurant || '未填寫'}</div>
+          </div>
+        </div>
+      `;
+
+      const chaptersContainer = document.getElementById('book-chapters-container');
+      chaptersContainer.innerHTML = '';
+      CHAPTER_DEFINITIONS.forEach((ch, idx) => {
+        const chData = state.chaptersData[idx];
+        const textContent = state.globalBookStyle === 'written' ? chData.polishedWritten : chData.polishedCantonese;
+        const photoUrl = chData.customPhotoUrl || ch.defaultPhotoUrl;
+        const startYr = state.birthYear + ch.ageRange[0];
+        const endYr = state.birthYear + ch.ageRange[1];
+
+        const div = document.createElement('div');
+        div.className = "hk-vintage-frame bg-paperCard rounded-3xl p-6 sm:p-8 space-y-5 print-break-inside";
+        div.innerHTML = `
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b-2 border-borderWarm pb-4">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <span class="px-3 py-1 rounded-full bg-stampRed text-white font-bold text-xs">${ch.shortTitle}</span>
+                <span class="text-xs font-bold text-jadeDark">📅 ${startYr} – ${endYr}年</span>
+                <span>${chData.starred ? '⭐ 重要記憶' : ''}</span>
+              </div>
+              <h3 class="font-serif font-black text-2xl sm:text-3xl text-ink">${ch.title}</h3>
+            </div>
+            <div class="flex items-center gap-2 no-print">
+              <button type="button" onclick="goToChapter(${idx})" class="px-3 py-2 rounded-xl bg-paper hover:bg-paperDark text-ink font-bold text-xs border border-ink">
+                ✏️ 修改呢章
+              </button>
+              <button type="button" onclick="speakChapterBook(${idx})" class="px-3.5 py-2 rounded-xl bg-jade text-white font-bold text-xs flex items-center gap-1 shadow-sm">
+                <span>🔊</span> 朗讀本章
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+            <div class="md:col-span-4 hk-photo-frame rounded-2xl">
+              <img src="${photoUrl}" alt="${ch.title}" class="w-full h-48 object-cover rounded-lg vintage-photo-filter" />
+              <div class="text-xs font-serif text-inkMuted pt-1.5 text-center">📸 香港真實歷史珍藏相片</div>
+            </div>
+            <div class="md:col-span-8 space-y-3">
+              <p class="font-serif text-lg sm:text-xl text-ink leading-relaxed bg-paper p-4 sm:p-5 rounded-2xl border border-borderWarm">
+                ${textContent || '（本章尚未填寫內容）'}
+              </p>
+            </div>
+          </div>
+        `;
+        chaptersContainer.appendChild(div);
+      });
+
+      renderFamilyMessagesList();
+    }
+
+    function renderFamilyMessagesList() {
+      const listContainer = document.getElementById('family-messages-list');
+      if (!listContainer) return;
+      listContainer.innerHTML = '';
+      state.familyMessages.forEach(msg => {
+        const card = document.createElement('div');
+        card.className = "bg-paper p-4 sm:p-5 rounded-2xl border-2 border-borderWarm space-y-2";
+        card.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="font-serif font-black text-base text-ink">${msg.author}</span>
+            <span class="px-2 py-0.5 rounded bg-goldLight text-stampRed font-bold text-xs border border-gold">${msg.relation}</span>
+          </div>
+          <p class="text-sm sm:text-base text-inkMuted leading-relaxed">${msg.text}</p>
+        `;
+        listContainer.appendChild(card);
+      });
+      document.getElementById('family-wall-photo').src = state.familyWallPhoto;
+    }
+
+    function addFamilyMessage() {
+      const author = document.getElementById('family-author-input').value.trim();
+      const relation = document.getElementById('family-relation-input').value.trim();
+      const text = document.getElementById('family-message-input').value.trim();
+
+      if (!author || !text) {
+        showToast('請填寫稱呼與留言內容！');
+        return;
+      }
+
+      state.familyMessages.push({ author, relation: relation || '親屬', text });
+      document.getElementById('family-author-input').value = '';
+      document.getElementById('family-relation-input').value = '';
+      document.getElementById('family-message-input').value = '';
+      renderFamilyMessagesList();
+      showToast('成功加入家人留言館！');
+    }
+
+    function setGlobalBookStyle(style) {
+      state.globalBookStyle = style;
+      const btnC = document.getElementById('book-global-cantonese');
+      const btnW = document.getElementById('book-global-written');
+      if (style === 'cantonese') {
+        btnC.className = "px-3.5 py-2 rounded-lg font-bold text-xs sm:text-sm transition bg-stampRed text-white";
+        btnW.className = "px-3.5 py-2 rounded-lg font-bold text-xs sm:text-sm transition text-ink hover:bg-paperDark";
+      } else {
+        btnW.className = "px-3.5 py-2 rounded-lg font-bold text-xs sm:text-sm transition bg-stampRed text-white";
+        btnC.className = "px-3.5 py-2 rounded-lg font-bold text-xs sm:text-sm transition text-ink hover:bg-paperDark";
+      }
+      renderBookScreen();
+      showToast(style === 'cantonese' ? '已切換為廣東話原味版' : '已切換為書面語傳記版');
+    }
+
+    function speakChapterBook(idx) {
+      const chData = state.chaptersData[idx];
+      const text = state.globalBookStyle === 'written' ? chData.polishedWritten : chData.polishedCantonese;
+      speakText(text || chData.rawInput);
+    }
+
+    function speakDailyLifeArchive() {
+      const ch5 = state.chaptersData[4];
+      const summary = `老友記日常生活檔案。朝早習慣：${(ch5.dailyRoutine.morning || []).join('、')}。晏晝時光：${(ch5.dailyRoutine.afternoon || []).join('、')}。夜晚生活：${(ch5.dailyRoutine.evening || []).join('、')}。招牌住家菜：${ch5.signatureDish}。最愛茶樓餐廳：${ch5.favouriteRestaurant}。`;
+      speakText(summary);
+    }
+
+    function playFullAutobiographyAudio() {
+      speakText(`歡迎收聽${state.name}嘅人生自傳《香江歲月》。我哋由一九四八年深水埗講起，走過獅子山下拼搏歲月、成家立室、流金歲月，以及日常生活與人生智慧。`);
+    }
+
+    function loadDemoProfileAndBook() {
+      state.name = '陳伯（陳志強）';
+      state.birthYear = 1948;
+      state.age = 78;
+      state.district = '深水埗／石硤尾';
+      document.getElementById('input-name').value = state.name;
+      document.getElementById('select-birth-year').value = 1948;
+      document.getElementById('input-direct-age').value = 78;
+      updateOnboardingDisplay();
+      goToScreen('book');
+      showToast('已成功載入「陳伯」完整示範檔案！');
+    }
+
+    function resetAllData() {
+      localStorage.clear();
+      location.reload();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast-box');
+      document.getElementById('toast-text').textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 3200);
+    }
+  </script>
+</body>
+</html>
